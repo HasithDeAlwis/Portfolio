@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Transaction System | &gt; Hasith De Alwis</title>
+    <style>
+        <nav><a href="/" {
+                {
+                if .IsHome
+            }
+        }
+
+        class="active" {
+                {
+                end
+            }
+        }
+
+        >[ home]</a><a href="/blog/" {
+                {
+                if eq .Section "blog"
+            }
+        }
+
+        class="active" {
+                {
+                end
+            }
+        }
+
+        >[ blog]</a><a href="/projects/" {
+                {
+                if eq .Section "projects"
+            }
+        }
+
+        class="active" {
+                {
+                end
+            }
+        }
+
+        >[ projects]</a></nav>* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #2d3748;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background-color: #404040;
+            color: #ffffff;
+            padding: 20px 40px;
+            border-bottom: 3px solid #333;
+        }
+
+        .header-title {
+            font-size: 24px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        .header-title a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .header-title a:hover {
+            color: #87ceeb;
+        }
+
+        .header-subtitle {
+            color: #b0b0b0;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #87ceeb;
+            text-decoration: none;
+            margin-right: 25px;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            font-size: 14px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: #333;
+            border: 1px solid #555;
+            color: #ffffff;
+        }
+
+        main {
+            padding: 40px;
+            min-height: calc(100vh - 200px);
+        }
+
+        .content h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2d3748;
+            font-weight: normal;
+        }
+
+        .content h2 {
+            font-size: 20px;
+            margin: 0 0 15px 0;
+            color: #4a5568;
+            font-weight: normal;
+        }
+
+        .content h3 {
+            font-size: 16px;
+            margin: 25px 0 10px 0;
+            color: #4a5568;
+            font-weight: normal;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .content ul {
+            margin: 15px 0 15px 30px;
+        }
+
+        .content li {
+            margin-bottom: 8px;
+        }
+
+        .content a {
+            color: #3182ce;
+            text-decoration: underline;
+        }
+
+        .content a:hover {
+            color: #2c5282;
+        }
+
+        .post-meta {
+            color: #718096;
+            font-size: 12px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .post-list {
+            margin-top: 30px;
+        }
+
+        .post-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .post-item:last-child {
+            border-bottom: none;
+        }
+
+        .post-title {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+        }
+
+        .post-title a {
+            text-decoration: none;
+            color: #2d3748;
+        }
+
+        .post-title a:hover {
+            color: #3182ce;
+            text-decoration: underline;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .project-card {
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+
+        .project-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            color: #2d3748;
+        }
+
+        .project-card p {
+            margin-bottom: 15px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .project-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: #3182ce;
+            text-decoration: none;
+            font-size: 12px;
+            border: 1px solid #3182ce;
+            padding: 4px 8px;
+        }
+
+        .project-links a:hover {
+            background-color: #3182ce;
+            color: white;
+        }
+
+        .hero-section {
+            margin-bottom: 40px;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .hero-section h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+
+        .hero-section p {
+            font-size: 16px;
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #404040;
+            color: #b0b0b0;
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            border-top: 3px solid #333;
+        }
+
+        .social-links {
+            margin: 15px 0;
+        }
+
+        .social-links a {
+            color: #87ceeb;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 13px;
+        }
+
+        .social-links a:hover {
+            color: #ffffff;
+        }
+
+        .status-line {
+            background-color: #333;
+            color: #87ceeb;
+            padding: 8px 40px;
+            font-size: 12px;
+            border-top: 1px solid #555;
+        }
+
+        code {
+            background-color: #f1f5f9;
+            padding: 2px 6px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 12px;
+            color: #e53e3e;
+        }
+
+        pre {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .blog-banner {
+            background-color: #404040;
+            color: #ffffff;
+            padding: 40px 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .blog-banner-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .blog-banner h1 {
+            font-size: 32px;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+            font-weight: normal;
+        }
+
+        .blog-banner .post-meta {
+            color: #b0b0b0;
+            font-size: 14px;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-title">
+                <a href="/">&gt; Hasith De Alwis</a>
+            </div>
+            <div class="header-subtitle">
+                <h1>I'm an Engineer, Student, and Hacker</h1>
+            </div>
+            <nav>
+                <a href="/" >[ home ]</a>
+                <a href="/blog/" >[ blog ]</a>
+                <a href="/projects/" class="active" >[ projects ]</a>
+            </nav>
+        </header>
+
+        <main>
+            
+
+    <article>
+        <header>
+            <h1>Blockchain Transaction System</h1>
+            <div class="post-meta">
+                
+                Solidity, Web3, React • November 2024
+                
+            </div>
+            
+            <div class="project-links" style="margin-top: 15px;">
+                
+                <a href="https://github.com/example/blockchain-tx" target="_blank">[ github ]</a>
+                
+                
+                <a href="https://confluxx.com" target="_blank">[ demo ]</a>
+                
+            </div>
+            
+        </header>
+
+        <div class="content">
+            <p>Collaborated on building a high-volume blockchain transaction system managing over $600M in transaction volume.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Smart contract development and optimization</li>
+<li>Real-time transaction monitoring</li>
+<li>Gas optimization algorithms</li>
+<li>Multi-chain support</li>
+</ul>
+<p><strong>Technologies:</strong> Solidity, Web3.js, React, Node.js, PostgreSQL</p>
+
+        </div>
+    </article>
+
+
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="#">[ Github ]</a>
+                <a href="#">[ Twitter ]</a>
+                <a href="#">[ Email ]</a>
+                <a href="#">[ LinkedIn ]</a>
+            </div>
+            <div class="status-line">
+                &copy; 2025 &gt; Hasith De Alwis -- Built with Hugo and Emacs vibes
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

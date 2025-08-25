@@ -1,0 +1,49 @@
+{{ define "main" }}
+{{ if eq .Section "blog" }}
+<!-- Blog post with full-width banner -->
+<div class="blog-post">
+    <div class="blog-banner">
+        <div class="blog-banner-content">
+            <h1>{{ .Title }}</h1>
+            <div class="post-meta">
+                Published on {{ .Date.Format "January 2, 2006" }}
+            </div>
+        </div>
+    </div>
+    <div class="blog-content">
+        <article>
+            <div class="content">
+                {{ .Content }}
+            </div>
+        </article>
+    </div>
+</div>
+{{ else }}
+    <article>
+        <header>
+            <h1>{{ .Title }}</h1>
+            <div class="post-meta">
+                {{ if eq .Section "projects" }}
+                {{ if .Params.tech }}{{ .Params.tech }} • {{ end }}{{ .Date.Format "January 2006" }}
+                {{ else }}
+                Published on {{ .Date.Format "January 2, 2006" }}
+                {{ end }}
+            </div>
+            {{ if eq .Section "projects" }}
+            <div class="project-links" style="margin-top: 15px;">
+                {{ if .Params.github }}
+                <a href="{{ .Params.github }}" target="_blank">[ github ]</a>
+                {{ end }}
+                {{ if .Params.demo }}
+                <a href="{{ .Params.demo }}" target="_blank">[ demo ]</a>
+                {{ end }}
+            </div>
+            {{ end }}
+        </header>
+
+        <div class="content">
+            {{ .Content }}
+        </div>
+    </article>
+{{ end }}
+{{ end }}

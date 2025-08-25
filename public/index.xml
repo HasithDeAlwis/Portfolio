@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hasith De Alwis on &gt; Hasith De Alwis</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Hasith De Alwis on &gt; Hasith De Alwis</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 09 Aug 2025 18:42:37 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building in Public: My Hugo Portfolio</title>
+      <link>http://localhost:1313/blog/first-post/</link>
+      <pubDate>Sat, 09 Aug 2025 18:42:37 -0400</pubDate>
+      <guid>http://localhost:1313/blog/first-post/</guid>
+      <description>&lt;p&gt;Welcome to my first blog post! I decided to build my portfolio site using Hugo and document the process.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-hugo&#34;&gt;Why Hugo?&lt;/h2&gt;&#xA;&lt;p&gt;After exploring various static site generators, I chose Hugo for several reasons:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Speed&lt;/strong&gt; - Hugo builds sites incredibly fast&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Flexibility&lt;/strong&gt; - Complete control over layouts and styling&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Markdown&lt;/strong&gt; - Write content in markdown with frontmatter&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;No dependencies&lt;/strong&gt; - Single binary, no complex toolchain&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;the-emacs-gnu-aesthetic&#34;&gt;The Emacs GNU Aesthetic&lt;/h2&gt;&#xA;&lt;p&gt;I wanted my site to have that classic Emacs/GNU terminal vibe - clean, functional, and reminiscent of the tools I use daily for coding. The dark header, monospace fonts, and terminal-inspired color scheme create that perfect developer aesthetic.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building in Public: My Hugo Portfolio</title>
+      <link>http://localhost:1313/posts/first-post/</link>
+      <pubDate>Sat, 09 Aug 2025 18:42:37 -0400</pubDate>
+      <guid>http://localhost:1313/posts/first-post/</guid>
+      <description>&lt;p&gt;Welcome to my first blog post! I decided to build my portfolio site using Hugo and document the process.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-hugo&#34;&gt;Why Hugo?&lt;/h2&gt;&#xA;&lt;p&gt;After exploring various static site generators, I chose Hugo for several reasons:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Speed&lt;/strong&gt; - Hugo builds sites incredibly fast&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Flexibility&lt;/strong&gt; - Complete control over layouts and styling&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Markdown&lt;/strong&gt; - Write content in markdown with frontmatter&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;No dependencies&lt;/strong&gt; - Single binary, no complex toolchain&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;the-emacs-gnu-aesthetic&#34;&gt;The Emacs GNU Aesthetic&lt;/h2&gt;&#xA;&lt;p&gt;I wanted my site to have that classic Emacs/GNU terminal vibe - clean, functional, and reminiscent of the tools I use daily for coding. The dark header, monospace fonts, and terminal-inspired color scheme create that perfect developer aesthetic.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Scaling Video Diffusion Models to 100M&#43; Users</title>
+      <link>http://localhost:1313/blog/scaling-video-diffusion/</link>
+      <pubDate>Fri, 08 Aug 2025 10:30:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/scaling-video-diffusion/</guid>
+      <description>&lt;p&gt;At WOMBO, I had the incredible opportunity to work on scaling one of the first commercially successful video diffusion models. Here&amp;rsquo;s what I learned about building AI systems that can handle massive scale.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-challenge&#34;&gt;The Challenge&lt;/h2&gt;&#xA;&lt;p&gt;When we launched our video generation feature, we had no idea it would reach 100+ million users in just 2 months. The initial prototype was built for research, not production scale.&lt;/p&gt;&#xA;&lt;h2 id=&#34;performance-optimizations&#34;&gt;Performance Optimizations&lt;/h2&gt;&#xA;&lt;p&gt;The key breakthroughs came from:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building High-Performance Systems: Lessons from CentML</title>
+      <link>http://localhost:1313/blog/high-performance-systems/</link>
+      <pubDate>Thu, 07 Aug 2025 14:15:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/high-performance-systems/</guid>
+      <description>&lt;p&gt;Working as a Software Engineering Intern at CentML has given me deep insights into what it takes to build truly high-performance machine learning infrastructure.&lt;/p&gt;&#xA;&lt;h2 id=&#34;performance-first-mindset&#34;&gt;Performance-First Mindset&lt;/h2&gt;&#xA;&lt;p&gt;At CentML, every decision is made with performance in mind. This isn&amp;rsquo;t just about making things fast - it&amp;rsquo;s about understanding the fundamental trade-offs in distributed systems and making conscious choices.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-principles&#34;&gt;Key Principles&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Memory Efficiency&lt;/strong&gt;: Every byte matters when you&amp;rsquo;re working with large models. We spend significant time profiling memory usage and optimizing allocation patterns.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Video Diffusion Models at WOMBO</title>
+      <link>http://localhost:1313/projects/video-diffusion/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/video-diffusion/</guid>
+      <description>&lt;p&gt;Built and optimized one of the first commercially successful video diffusion models, reaching over 100 million users in just 2 months.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-achievements&#34;&gt;Key Achievements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Implemented state-of-the-art video generation algorithms&lt;/li&gt;&#xA;&lt;li&gt;Optimized inference pipeline for real-time generation&lt;/li&gt;&#xA;&lt;li&gt;Scaled infrastructure to handle millions of daily requests&lt;/li&gt;&#xA;&lt;li&gt;Collaborated with research team on novel architectural improvements&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; PyTorch, CUDA, Docker, Kubernetes, Python&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Blockchain Transaction System</title>
+      <link>http://localhost:1313/projects/blockchain-system/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/blockchain-system/</guid>
+      <description>&lt;p&gt;Collaborated on building a high-volume blockchain transaction system managing over $600M in transaction volume.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Smart contract development and optimization&lt;/li&gt;&#xA;&lt;li&gt;Real-time transaction monitoring&lt;/li&gt;&#xA;&lt;li&gt;Gas optimization algorithms&lt;/li&gt;&#xA;&lt;li&gt;Multi-chain support&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Solidity, Web3.js, React, Node.js, PostgreSQL&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Multi-Modal ML Training Tools</title>
+      <link>http://localhost:1313/projects/ml-tools/</link>
+      <pubDate>Tue, 10 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/ml-tools/</guid>
+      <description>&lt;p&gt;Open-sourced comprehensive toolkit for training state-of-the-art multi-modal machine learning models.&lt;/p&gt;&#xA;&lt;h2 id=&#34;components&#34;&gt;Components&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Efficient data loading pipelines&lt;/li&gt;&#xA;&lt;li&gt;Distributed training frameworks&lt;/li&gt;&#xA;&lt;li&gt;Model evaluation metrics&lt;/li&gt;&#xA;&lt;li&gt;Hyperparameter optimization tools&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Python, PyTorch, Ray, Weights &amp;amp; Biases, Docker&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Send Story - Rock Climbing Gear</title>
+      <link>http://localhost:1313/projects/send-story/</link>
+      <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/send-story/</guid>
+      <description>&lt;p&gt;Founded and built an e-commerce platform for rock climbing products, serving over 10,000 athletes across 15 countries.&lt;/p&gt;&#xA;&lt;h2 id=&#34;business-impact&#34;&gt;Business Impact&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;International shipping and logistics&lt;/li&gt;&#xA;&lt;li&gt;Custom product design and manufacturing&lt;/li&gt;&#xA;&lt;li&gt;Community building and athlete sponsorships&lt;/li&gt;&#xA;&lt;li&gt;Sustainable growth and profitability&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; React, Node.js, Stripe, Shopify, AWS&lt;/p&gt;&#xA;&lt;h2 id=&#34;business-impact-1&#34;&gt;Business Impact&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;International shipping and logistics&lt;/li&gt;&#xA;&lt;li&gt;Custom product design and manufacturing&lt;/li&gt;&#xA;&lt;li&gt;Community building and athlete sponsorships&lt;/li&gt;&#xA;&lt;li&gt;Sustainable growth and profitability&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; React, Node.js, Stripe, Shopify, AWS&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
