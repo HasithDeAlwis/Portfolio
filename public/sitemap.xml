@@ -5,12 +5,6 @@
     <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-08-09T18:42:37-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2025-08-09T18:42:37-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/first-post/</loc>
-    <lastmod>2025-08-09T18:42:37-04:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/first-post/</loc>
     <lastmod>2025-08-09T18:42:37-04:00</lastmod>
   </url><url>
@@ -20,11 +14,14 @@
     <loc>http://localhost:1313/projects/</loc>
     <lastmod>2025-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/scaling-video-diffusion/</loc>
-    <lastmod>2025-08-08T10:30:00-04:00</lastmod>
+    <loc>http://localhost:1313/blog/effective-ai-workflows/</loc>
+    <lastmod>2025-07-24T10:30:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/high-performance-systems/</loc>
-    <lastmod>2025-08-07T14:15:00-04:00</lastmod>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2025-07-24T10:30:00-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/thread-safe-event-systems-in-go/</loc>
+    <lastmod>2025-07-24T10:30:00-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/video-diffusion/</loc>
     <lastmod>2025-01-15T00:00:00+00:00</lastmod>

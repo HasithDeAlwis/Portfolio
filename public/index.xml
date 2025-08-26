@@ -10,31 +10,24 @@
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building in Public: My Hugo Portfolio</title>
-      <link>http://localhost:1313/blog/first-post/</link>
-      <pubDate>Sat, 09 Aug 2025 18:42:37 -0400</pubDate>
-      <guid>http://localhost:1313/blog/first-post/</guid>
-      <description>&lt;p&gt;Welcome to my first blog post! I decided to build my portfolio site using Hugo and document the process.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-hugo&#34;&gt;Why Hugo?&lt;/h2&gt;&#xA;&lt;p&gt;After exploring various static site generators, I chose Hugo for several reasons:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Speed&lt;/strong&gt; - Hugo builds sites incredibly fast&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Flexibility&lt;/strong&gt; - Complete control over layouts and styling&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Markdown&lt;/strong&gt; - Write content in markdown with frontmatter&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;No dependencies&lt;/strong&gt; - Single binary, no complex toolchain&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;the-emacs-gnu-aesthetic&#34;&gt;The Emacs GNU Aesthetic&lt;/h2&gt;&#xA;&lt;p&gt;I wanted my site to have that classic Emacs/GNU terminal vibe - clean, functional, and reminiscent of the tools I use daily for coding. The dark header, monospace fonts, and terminal-inspired color scheme create that perfect developer aesthetic.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Building in Public: My Hugo Portfolio</title>
       <link>http://localhost:1313/posts/first-post/</link>
       <pubDate>Sat, 09 Aug 2025 18:42:37 -0400</pubDate>
       <guid>http://localhost:1313/posts/first-post/</guid>
       <description>&lt;p&gt;Welcome to my first blog post! I decided to build my portfolio site using Hugo and document the process.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-hugo&#34;&gt;Why Hugo?&lt;/h2&gt;&#xA;&lt;p&gt;After exploring various static site generators, I chose Hugo for several reasons:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Speed&lt;/strong&gt; - Hugo builds sites incredibly fast&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Flexibility&lt;/strong&gt; - Complete control over layouts and styling&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Markdown&lt;/strong&gt; - Write content in markdown with frontmatter&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;No dependencies&lt;/strong&gt; - Single binary, no complex toolchain&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;the-emacs-gnu-aesthetic&#34;&gt;The Emacs GNU Aesthetic&lt;/h2&gt;&#xA;&lt;p&gt;I wanted my site to have that classic Emacs/GNU terminal vibe - clean, functional, and reminiscent of the tools I use daily for coding. The dark header, monospace fonts, and terminal-inspired color scheme create that perfect developer aesthetic.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Scaling Video Diffusion Models to 100M&#43; Users</title>
-      <link>http://localhost:1313/blog/scaling-video-diffusion/</link>
-      <pubDate>Fri, 08 Aug 2025 10:30:00 -0400</pubDate>
-      <guid>http://localhost:1313/blog/scaling-video-diffusion/</guid>
-      <description>&lt;p&gt;At WOMBO, I had the incredible opportunity to work on scaling one of the first commercially successful video diffusion models. Here&amp;rsquo;s what I learned about building AI systems that can handle massive scale.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-challenge&#34;&gt;The Challenge&lt;/h2&gt;&#xA;&lt;p&gt;When we launched our video generation feature, we had no idea it would reach 100+ million users in just 2 months. The initial prototype was built for research, not production scale.&lt;/p&gt;&#xA;&lt;h2 id=&#34;performance-optimizations&#34;&gt;Performance Optimizations&lt;/h2&gt;&#xA;&lt;p&gt;The key breakthroughs came from:&lt;/p&gt;</description>
+      <title>AI Workflows, Ignore the Hype</title>
+      <link>http://localhost:1313/blog/effective-ai-workflows/</link>
+      <pubDate>Thu, 24 Jul 2025 10:30:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/effective-ai-workflows/</guid>
+      <description>&lt;h1 id=&#34;building-thread-safe-event-systems-in-go-a-k6-waitforresponse-case-study&#34;&gt;Building Thread-Safe Event Systems in Go: A k6 waitForResponse Case Study&lt;/h1&gt;&#xA;&lt;p&gt;Browser automation tools need to wait for specific network responses—but building this in a concurrent system is trickier than it looks. When testing web applications, you often need to wait for an API call to complete before proceeding with the next action. Without proper synchronization, tests become flaky and unreliable. Recently, I contributed the &lt;code&gt;waitForResponse&lt;/code&gt; API to k6&amp;rsquo;s browser module, architecting a thread-safe event system that handles hundreds of concurrent waiters without race conditions or resource leaks.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Building High-Performance Systems: Lessons from CentML</title>
-      <link>http://localhost:1313/blog/high-performance-systems/</link>
-      <pubDate>Thu, 07 Aug 2025 14:15:00 -0400</pubDate>
-      <guid>http://localhost:1313/blog/high-performance-systems/</guid>
-      <description>&lt;p&gt;Working as a Software Engineering Intern at CentML has given me deep insights into what it takes to build truly high-performance machine learning infrastructure.&lt;/p&gt;&#xA;&lt;h2 id=&#34;performance-first-mindset&#34;&gt;Performance-First Mindset&lt;/h2&gt;&#xA;&lt;p&gt;At CentML, every decision is made with performance in mind. This isn&amp;rsquo;t just about making things fast - it&amp;rsquo;s about understanding the fundamental trade-offs in distributed systems and making conscious choices.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-principles&#34;&gt;Key Principles&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Memory Efficiency&lt;/strong&gt;: Every byte matters when you&amp;rsquo;re working with large models. We spend significant time profiling memory usage and optimizing allocation patterns.&lt;/p&gt;</description>
+      <title>Building Thread-Safe Event Systems in Go: A k6 waitForResponse Case Study</title>
+      <link>http://localhost:1313/blog/thread-safe-event-systems-in-go/</link>
+      <pubDate>Thu, 24 Jul 2025 10:30:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/thread-safe-event-systems-in-go/</guid>
+      <description>&lt;h1 id=&#34;building-thread-safe-event-systems-in-go-a-k6-waitforresponse-case-study&#34;&gt;Building Thread-Safe Event Systems in Go: A k6 waitForResponse Case Study&lt;/h1&gt;&#xA;&lt;p&gt;Browser automation tools need to wait for specific network responses—but building this in a concurrent system is trickier than it looks. When testing web applications, you often need to wait for an API call to complete before proceeding with the next action. Without proper synchronization, tests become flaky and unreliable. Recently, I contributed the &lt;code&gt;waitForResponse&lt;/code&gt; API to k6&amp;rsquo;s browser module, architecting a thread-safe event system that handles hundreds of concurrent waiters without race conditions or resource leaks.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Video Diffusion Models at WOMBO</title>
