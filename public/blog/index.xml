@@ -6,24 +6,24 @@
     <description>Recent content in Blog on &gt; Hasith De Alwis</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Jul 2025 10:30:00 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 24 Aug 2025 10:30:00 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>AI Workflows, Ignore the Hype</title>
-      <link>http://localhost:1313/blog/effective-ai-workflows/</link>
-      <pubDate>Thu, 24 Jul 2025 10:30:00 -0400</pubDate>
-      <guid>http://localhost:1313/blog/effective-ai-workflows/</guid>
-      <description>&lt;h1 id=&#34;building-thread-safe-event-systems-in-go-a-k6-waitforresponse-case-study&#34;&gt;Building Thread-Safe Event Systems in Go: A k6 waitForResponse Case Study&lt;/h1&gt;&#xA;&lt;p&gt;Browser automation tools need to wait for specific network responses—but building this in a concurrent system is trickier than it looks. When testing web applications, you often need to wait for an API call to complete before proceeding with the next action. Without proper synchronization, tests become flaky and unreliable. Recently, I contributed the &lt;code&gt;waitForResponse&lt;/code&gt; API to k6&amp;rsquo;s browser module, architecting a thread-safe event system that handles hundreds of concurrent waiters without race conditions or resource leaks.&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Building Thread-Safe Event Systems in Go: A k6 waitForResponse Case Study</title>
       <link>http://localhost:1313/blog/thread-safe-event-systems-in-go/</link>
-      <pubDate>Thu, 24 Jul 2025 10:30:00 -0400</pubDate>
+      <pubDate>Sun, 24 Aug 2025 10:30:00 -0400</pubDate>
       <guid>http://localhost:1313/blog/thread-safe-event-systems-in-go/</guid>
       <description>&lt;h1 id=&#34;building-thread-safe-event-systems-in-go-a-k6-waitforresponse-case-study&#34;&gt;Building Thread-Safe Event Systems in Go: A k6 waitForResponse Case Study&lt;/h1&gt;&#xA;&lt;p&gt;Browser automation tools need to wait for specific network responses—but building this in a concurrent system is trickier than it looks. When testing web applications, you often need to wait for an API call to complete before proceeding with the next action. Without proper synchronization, tests become flaky and unreliable. Recently, I &lt;a href=&#34;https://github.com/grafana/k6/pull/5002&#34;&gt;contributed&lt;/a&gt; the &lt;code&gt;waitForResponse&lt;/code&gt; API to k6&amp;rsquo;s browser module, architecting a thread-safe event system that handles hundreds of concurrent waiters without race conditions or resource leaks.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>FE best practices</title>
+      <title>How I merged 1k&#43; lines of Code into the Grafana Labs Ecosystem with AI</title>
+      <link>http://localhost:1313/blog/1k-loc-grafana/</link>
+      <pubDate>Wed, 20 Aug 2025 10:30:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/1k-loc-grafana/</guid>
+      <description>&lt;p&gt;Up until two months ago, I was very adverse against AI. I believed it lowered our ability to think critically, be creative, and to write good scalable code. I still believe this! But for better or for worse, we should learn how to use it effectively and in a manner such that we still LEARN.&lt;/p&gt;&#xA;&lt;p&gt;I strongly advise against people using AI for personal projects, but for work and contributing to large codebases, AI can be a helpful tool that allows you to optimize workflows and make your company more money.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Front-End best practices</title>
       <link>http://localhost:1313/blog/fe-best-practices/</link>
       <pubDate>Sat, 28 Dec 2024 10:30:00 -0400</pubDate>
       <guid>http://localhost:1313/blog/fe-best-practices/</guid>

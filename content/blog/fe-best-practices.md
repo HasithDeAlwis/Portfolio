@@ -1,7 +1,7 @@
 ---
 date: '2024-12-28T10:30:00-04:00'
 draft: false
-title: 'FE best practices'
+title: 'Front-End best practices'
 description: "My two cents on how to build scalable FE applications"
 ---
 

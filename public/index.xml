@@ -16,25 +16,25 @@
       <description>&lt;h1 id=&#34;what&#34;&gt;What&lt;/h1&gt;&#xA;&lt;p&gt;ha-syncgen is a declarative infrastructure tool designed to simplify the setup of high-availability PostgreSQL database clusters. The project takes a YAML-based configuration approach where users define their primary database server and replica nodes along with synchronization parameters, and the tool automatically generates all the necessary scripts, systemd services, and configuration files needed to maintain the cluster. The tool uses rsync for data synchronization between the primary and replica nodes, with configurable sync intervals and automatic health monitoring.&#xA;The generated infrastructure includes individual sync scripts for each replica, health check scripts that monitor the primary server&amp;rsquo;s availability, systemd service and timer units for automated operation, and PostgreSQL configuration patches.&#xA;The backbone of this project is WAL streaming, which is already built-in to PostgreSQL, allowing us to be certain that the data sent over is not corrupted, which could be the case if we use something like &lt;code&gt;rsync&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Building Thread-Safe Event Systems in Go: A k6 waitForResponse Case Study</title>
+      <link>http://localhost:1313/blog/thread-safe-event-systems-in-go/</link>
+      <pubDate>Sun, 24 Aug 2025 10:30:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/thread-safe-event-systems-in-go/</guid>
+      <description>&lt;h1 id=&#34;building-thread-safe-event-systems-in-go-a-k6-waitforresponse-case-study&#34;&gt;Building Thread-Safe Event Systems in Go: A k6 waitForResponse Case Study&lt;/h1&gt;&#xA;&lt;p&gt;Browser automation tools need to wait for specific network responses—but building this in a concurrent system is trickier than it looks. When testing web applications, you often need to wait for an API call to complete before proceeding with the next action. Without proper synchronization, tests become flaky and unreliable. Recently, I &lt;a href=&#34;https://github.com/grafana/k6/pull/5002&#34;&gt;contributed&lt;/a&gt; the &lt;code&gt;waitForResponse&lt;/code&gt; API to k6&amp;rsquo;s browser module, architecting a thread-safe event system that handles hundreds of concurrent waiters without race conditions or resource leaks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How I merged 1k&#43; lines of Code into the Grafana Labs Ecosystem with AI</title>
+      <link>http://localhost:1313/blog/1k-loc-grafana/</link>
+      <pubDate>Wed, 20 Aug 2025 10:30:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/1k-loc-grafana/</guid>
+      <description>&lt;p&gt;Up until two months ago, I was very adverse against AI. I believed it lowered our ability to think critically, be creative, and to write good scalable code. I still believe this! But for better or for worse, we should learn how to use it effectively and in a manner such that we still LEARN.&lt;/p&gt;&#xA;&lt;p&gt;I strongly advise against people using AI for personal projects, but for work and contributing to large codebases, AI can be a helpful tool that allows you to optimize workflows and make your company more money.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Building in Public: My Hugo Portfolio</title>
       <link>http://localhost:1313/posts/first-post/</link>
       <pubDate>Sat, 09 Aug 2025 18:42:37 -0400</pubDate>
       <guid>http://localhost:1313/posts/first-post/</guid>
       <description>&lt;p&gt;Welcome to my first blog post! I decided to build my portfolio site using Hugo and document the process.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-hugo&#34;&gt;Why Hugo?&lt;/h2&gt;&#xA;&lt;p&gt;After exploring various static site generators, I chose Hugo for several reasons:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Speed&lt;/strong&gt; - Hugo builds sites incredibly fast&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Flexibility&lt;/strong&gt; - Complete control over layouts and styling&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Markdown&lt;/strong&gt; - Write content in markdown with frontmatter&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;No dependencies&lt;/strong&gt; - Single binary, no complex toolchain&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;the-emacs-gnu-aesthetic&#34;&gt;The Emacs GNU Aesthetic&lt;/h2&gt;&#xA;&lt;p&gt;I wanted my site to have that classic Emacs/GNU terminal vibe - clean, functional, and reminiscent of the tools I use daily for coding. The dark header, monospace fonts, and terminal-inspired color scheme create that perfect developer aesthetic.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>AI Workflows, Ignore the Hype</title>
-      <link>http://localhost:1313/blog/effective-ai-workflows/</link>
-      <pubDate>Thu, 24 Jul 2025 10:30:00 -0400</pubDate>
-      <guid>http://localhost:1313/blog/effective-ai-workflows/</guid>
-      <description>&lt;h1 id=&#34;building-thread-safe-event-systems-in-go-a-k6-waitforresponse-case-study&#34;&gt;Building Thread-Safe Event Systems in Go: A k6 waitForResponse Case Study&lt;/h1&gt;&#xA;&lt;p&gt;Browser automation tools need to wait for specific network responses—but building this in a concurrent system is trickier than it looks. When testing web applications, you often need to wait for an API call to complete before proceeding with the next action. Without proper synchronization, tests become flaky and unreliable. Recently, I contributed the &lt;code&gt;waitForResponse&lt;/code&gt; API to k6&amp;rsquo;s browser module, architecting a thread-safe event system that handles hundreds of concurrent waiters without race conditions or resource leaks.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Building Thread-Safe Event Systems in Go: A k6 waitForResponse Case Study</title>
-      <link>http://localhost:1313/blog/thread-safe-event-systems-in-go/</link>
-      <pubDate>Thu, 24 Jul 2025 10:30:00 -0400</pubDate>
-      <guid>http://localhost:1313/blog/thread-safe-event-systems-in-go/</guid>
-      <description>&lt;h1 id=&#34;building-thread-safe-event-systems-in-go-a-k6-waitforresponse-case-study&#34;&gt;Building Thread-Safe Event Systems in Go: A k6 waitForResponse Case Study&lt;/h1&gt;&#xA;&lt;p&gt;Browser automation tools need to wait for specific network responses—but building this in a concurrent system is trickier than it looks. When testing web applications, you often need to wait for an API call to complete before proceeding with the next action. Without proper synchronization, tests become flaky and unreliable. Recently, I &lt;a href=&#34;https://github.com/grafana/k6/pull/5002&#34;&gt;contributed&lt;/a&gt; the &lt;code&gt;waitForResponse&lt;/code&gt; API to k6&amp;rsquo;s browser module, architecting a thread-safe event system that handles hundreds of concurrent waiters without race conditions or resource leaks.&lt;/p&gt;</description>
     </item>
     <item>
       <title>SketchScript</title>
@@ -51,7 +51,7 @@
       <description>&lt;h1 id=&#34;what--why&#34;&gt;What &amp;amp; Why&lt;/h1&gt;&#xA;&lt;p&gt;cuNext was a project done at &lt;a href=&#34;https://2024.uottahack.ca/&#34;&gt;UOttaHack6&lt;/a&gt;, our team set out to update Carleton&amp;rsquo;s outdated and inaccessible UI. We also implemented a course scheduler that used backtracking algorithms to ensure that no course conflicts would occur.&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/cuNext-homepage.png&#34;&#xA;    alt=&#34;low coupling high cohesion&#34; width=&#34;100%&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Our homepage&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;design-system-at-work&#34;&gt;Design System at Work&lt;/h1&gt;&#xA;&lt;p&gt;See the entirety of our design system at work &lt;a href=&#34;https://www.figma.com/design/yCW89M8HS3Rq4oxdHOkDHF/%E2%9C%A8-cuNext?node-id=230-3182&amp;amp;t=uQpzRWAydJePrWI3-1&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>FE best practices</title>
+      <title>Front-End best practices</title>
       <link>http://localhost:1313/blog/fe-best-practices/</link>
       <pubDate>Sat, 28 Dec 2024 10:30:00 -0400</pubDate>
       <guid>http://localhost:1313/blog/fe-best-practices/</guid>

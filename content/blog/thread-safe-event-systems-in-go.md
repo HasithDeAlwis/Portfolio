@@ -1,5 +1,5 @@
 ---
-date: '2025-07-24T10:30:00-04:00'
+date: '2025-08-24T10:30:00-04:00'
 draft: false
 title: 'Building Thread-Safe Event Systems in Go: A k6 waitForResponse Case Study'
 description: "Walk through an example PR I merged into Grafana Lab's k6 repo and see how thread-safety works at scale"
