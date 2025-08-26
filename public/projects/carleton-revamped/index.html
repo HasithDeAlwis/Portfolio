@@ -4,7 +4,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blockchain Transaction System | &gt; Hasith De Alwis</title>
+    <title>cuNext | &gt; Hasith De Alwis</title>
     <style>
         <nav><a href="/" {
                 {
@@ -356,7 +356,7 @@
                 <a href="/">&gt; Hasith De Alwis</a>
             </div>
             <div class="header-subtitle">
-                <h1>I'm an Engineer, Student, and Hacker</h1>
+                <h1>I'm a builder</h1>
             </div>
             <nav>
                 <a href="/" >[ home ]</a>
@@ -367,50 +367,73 @@
 
         <main>
             
+<style>
+    code {
+        background-color: transparent;
+    }
+</style>
 
-    <article>
-        <header>
-            <h1>Blockchain Transaction System</h1>
-            <div class="post-meta">
-                
-                Solidity, Web3, React • November 2024
-                
-            </div>
+<article>
+    <header>
+        <h1>cuNext</h1>
+        <div class="post-meta">
             
-            <div class="project-links" style="margin-top: 15px;">
-                
-                <a href="https://github.com/example/blockchain-tx" target="_blank">[ github ]</a>
-                
-                
-                <a href="https://confluxx.com" target="_blank">[ demo ]</a>
-                
-            </div>
+            Figma, Design Systems • March 2025
             
-        </header>
-
-        <div class="content">
-            <p>Collaborated on building a high-volume blockchain transaction system managing over $600M in transaction volume.</p>
-<h2 id="features">Features</h2>
-<ul>
-<li>Smart contract development and optimization</li>
-<li>Real-time transaction monitoring</li>
-<li>Gas optimization algorithms</li>
-<li>Multi-chain support</li>
-</ul>
-<p><strong>Technologies:</strong> Solidity, Web3.js, React, Node.js, PostgreSQL</p>
-
         </div>
-    </article>
+        
+        <div class="project-links" style="margin-top: 15px;">
+            
+            <a href="https://github.com/MFarabi619/cuNext" target="_blank">[ github ]</a>
+            
+            
+            <a href="https://carleton-central-redesign.gadget.app/" target="_blank">[ demo ]</a>
+            
+        </div>
+        
+    </header>
+
+    <div class="content">
+        <h1 id="what--why">What &amp; Why</h1>
+<p>cuNext was a project done at <a href="https://2024.uottahack.ca/">UOttaHack6</a>, our team set out to update Carleton&rsquo;s outdated and inaccessible UI. We also implemented a course scheduler that used backtracking algorithms to ensure that no course conflicts would occur.</p>
+<p><figure><img src="/cuNext-homepage.png"
+    alt="low coupling high cohesion" width="100%">
+</figure>
+
+<!-- raw HTML omitted --><!-- raw HTML omitted -->Our homepage<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="design-system-at-work">Design System at Work</h1>
+<p>See the entirety of our design system at work <a href="https://www.figma.com/design/yCW89M8HS3Rq4oxdHOkDHF/%E2%9C%A8-cuNext?node-id=230-3182&amp;t=uQpzRWAydJePrWI3-1">here</a>.</p>
+<hr>
+<h2 id="integrating-shadcn-with-figma">Integrating Shadcn with Figma</h2>
+<p>In cuNext, our goal was to create a seamless connection between our design work in Figma and the implementation layer using shadcn/ui. We started by building out our design system in Figma, focusing on reusable components, consistent spacing, and strong accessibility foundations. Figma served as our single source of truth for the visual language, including color palettes, typography, spacing, and component states.</p>
+<p>To bridge the gap between design and code, we leveraged shadcn/ui—a modern React UI kit built on top of Radix primitives and styled with Tailwind CSS. Our workflow typically involved:</p>
+<ul>
+<li><strong>Component Mapping:</strong> For each Figma component (like buttons, cards, inputs, switches), we identified or customized an equivalent shadcn/ui component. We referenced Figma’s naming and structure, keeping variants and states in sync.</li>
+<li><strong>Design Tokens:</strong> We mirrored Figma color tokens and spacing variables in our Tailwind config. Our <code>tailwind.config.js</code> and <code>app.css</code> files define custom CSS variables (e.g., <code>--primary</code>, <code>--border</code>, <code>--radius</code>) that match the Figma palette, ensuring visual fidelity between the two environments.</li>
+<li><strong>Iterative Feedback:</strong> As we implemented components, we regularly checked them against Figma prototypes, making tweaks in both code and design to address inconsistencies or accessibility issues. This iterative loop was key to maintaining parity.</li>
+</ul>
+<hr>
+<h2 id="using-design-systems-feedback-refinement-and-best-practices">Using Design Systems: Feedback, Refinement, and Best Practices</h2>
+<p>A robust design system was at the heart of our process. We established a library of Figma components—buttons, badges, cards, navigation bars, dropdowns, and more—using Figma’s autolayout and component variants for rapid iteration and scalability. Every component was built with accessibility in mind: proper contrast ratios, keyboard navigation, and clear focus states.</p>
+<p>Throughout the hackathon, we sought feedback from teammates and early users. We ran informal user interviews to identify pain points, accessibility gaps, and usability issues. Based on this input, we refined our components, adjusted spacing, improved color contrast, and ensured every state (hover, focus, disabled, etc.) was covered in both Figma and code.</p>
+<p>By tightly coupling Figma best practices (like autolayout for responsiveness, consistent use of styles, and extensive use of variants) with shadcn/ui’s composability and Tailwind’s utility classes, we ensured that our final product was not only visually consistent but also maintainable and scalable for future work. This tight integration allowed for fast prototyping, quick iteration, and a smooth handoff from design to development.</p>
+<p><figure><img src="/cuNext-design-system.png"
+    alt="low coupling high cohesion" width="100%">
+</figure>
+
+<!-- raw HTML omitted --><!-- raw HTML omitted -->Snippet of our design system<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+    </div>
+</article>
 
 
         </main>
 
         <footer>
             <div class="social-links">
-                <a href="#">[ Github ]</a>
-                <a href="#">[ Twitter ]</a>
-                <a href="#">[ Email ]</a>
-                <a href="#">[ LinkedIn ]</a>
+                <a href="https://github.com/HasithDeAlwis">[ Github ]</a>
+                <a href="mailto:hasithde24@gmail.com">[ Email ]</a>
+                <a href="https://www.linkedin.com/in/hasith-de-alwis/">[ LinkedIn ]</a>
             </div>
             <div class="status-line">
                 &copy; 2025 &gt; Hasith De Alwis -- Built with Hugo

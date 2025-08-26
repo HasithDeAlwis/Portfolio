@@ -2,4 +2,4 @@
 title: "Blog"
 ---
 
-My thoughts on software engineering, machine learning, and building great products.
+My thoughts on software engineering, open-source, and building great products.

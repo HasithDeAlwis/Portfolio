@@ -4,7 +4,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | &gt; Hasith De Alwis</title>
+    <title>SketchScript | &gt; Hasith De Alwis</title>
     <style>
         <nav><a href="/" {
                 {
@@ -367,226 +367,85 @@
 
         <main>
             
-<h1>Projects</h1>
+<style>
+    code {
+        background-color: transparent;
+    }
+</style>
 
-
-<div class="content">
-    <p>Here are some of the projects I&rsquo;ve worked on, ranging from machine learning research to web applications and developer tools.</p>
-
-</div>
-
-
-
-
-<div class="project-grid">
-    
-    <div class="project-card">
-
-        
-        <h3><a href="http://localhost:1313/projects/syncgen/">Syncgen</a></h3>
-        
-
-        <div class="post-meta">Go, Datadog, PostgreSQL • August 2025
-        </div>
-        
-        <p>Open-source tool for mid-sized companies to scaffold HA with YAML configs</p>
-        
-        <div class="project-links">
+<article>
+    <header>
+        <h1>SketchScript</h1>
+        <div class="post-meta">
             
-            <a href="https://github.com/HasithDeAlwis/ha-syncgen" target="_blank">[ github ]</a>
-            
-            
-
-            
-            <a href="http://localhost:1313/projects/syncgen/">[ details ]</a>
+            Haskell, AWS, Terraform • June 2025
             
         </div>
-    </div>
-    
-    <div class="project-card">
-
         
-        <h3><a href="http://localhost:1313/projects/sketch-script/">SketchScript</a></h3>
-        
-
-        <div class="post-meta">Haskell, AWS, Terraform • June 2025
-        </div>
-        
-        <p>Open-source tool to help designers prototype using custom DSL</p>
-        
-        <div class="project-links">
+        <div class="project-links" style="margin-top: 15px;">
             
             <a href="https://github.com/HasithDeAlwis/SketchScript" target="_blank">[ github ]</a>
             
             
             <a href="https://sketchscript.dev/" target="_blank">[ demo ]</a>
             
-
-            
-            <a href="http://localhost:1313/projects/sketch-script/">[ details ]</a>
-            
         </div>
+        
+    </header>
+
+    <div class="content">
+        <h1 id="what">What</h1>
+<p>SketchScript is a Domain-Specific Language (DSL) built in Haskell that serves as a code-driven alternative to visual mockup tools like Balsamiq or Figma wireframes. It&rsquo;s designed for designers and developers who prefer to create UI mockups programmatically.</p>
+<h1 id="why">Why</h1>
+<p>With advancements in LLMs the jobs of designers and front-end developers moves closer and closer.</p>
+<p>With tools such as <a href="https://www.figma.com/blog/introducing-figmas-dev-mode-mcp-server/">Figma MCP</a> coming around the block to be publicly available, designers must learn the basics of CSS layout tools (such as Flex, Grid, etc.), otherwise, the MCP server will be much less effective.</p>
+<p>This tool doubles down as something that designers can use to prototype with (Design as Code) and a tool they can use to learn basic CSS layouts.</p>
+<h1 id="technical-overview">Technical Overview</h1>
+<h2 id="haskell-at-the-core-why-and-how">Haskell at the Core: Why and How</h2>
+<p>SketchScript is a monorepo is built around Haskell, chosen for its strong type system, safety, and composability—perfect for building reliable APIs and custom languages. Haskell’s purity and expressive power make it ideal for both backend logic and DSL (Domain-Specific Language) implementation.</p>
+<h3 id="api-architecture-servant-types-and-modularity">API Architecture: Servant, Types, and Modularity</h3>
+<p>The API is constructed using the Servant library, which lets you define type-safe web APIs at the type level. Here’s how it all fits together:</p>
+<ul>
+<li><strong>Type-Level API Definitions:</strong> Each API module (e.g., <code>User.Api</code>, <code>Project.Server</code>, <code>File.Server</code>, <code>S3.Server</code>, <code>Auth.Server</code>) defines its endpoints as Haskell types. For example, <code>User.Api</code> describes endpoints like <code>&quot;users&quot; :&gt; Get '[JSON] [User]</code>.</li>
+<li><strong>Handlers and Servers:</strong> Each endpoint has a corresponding handler (e.g., <code>User.Handler</code>, <code>Project.Handler</code>) that implements the business logic, often interacting with a PostgreSQL database via the <code>postgresql-simple</code> library and connection pools.</li>
+<li><strong>Authentication:</strong> Auth is handled using <code>Servant.Auth.Server</code>, supporting JWTs and cookies, with OAuth flows for third-party login (see <code>Auth.Handler</code> and <code>Auth.Server</code>).</li>
+<li><strong>Composition:</strong> The main server (<code>App.Server</code>) composes all sub-APIs into a single application, wiring up CORS, environment config, and database pools.</li>
+<li><strong>Example:</strong> The <code>Project.Server</code> module exposes endpoints for listing and updating projects, delegating to handler functions that validate input, query the DB, and return typed responses.</li>
+</ul>
+<p>This approach means the entire API surface is checked at compile time, reducing runtime errors and making refactoring safe and easy.</p>
+<h3 id="the-custom-dsl-parsing-lexing-and-why-haskell-shines">The Custom DSL: Parsing, Lexing, and Why Haskell Shines</h3>
+<p>A standout feature is the custom DSL (Domain-Specific Language) for describing mockups or scripts, implemented in the <code>sketchscript-core</code> package.</p>
+<ul>
+<li><strong>Parser Combinators:</strong> The DSL is parsed using the Megaparsec library, a powerful parser combinator framework. Modules like <code>Parser.Common</code> define reusable parsers for things like sizing, content, and quoted strings.</li>
+<li><strong>Lexing and Parsing:</strong> Lexing (tokenizing input) and parsing (building ASTs) are handled together in Megaparsec, with functions like <code>parseSizing</code> and <code>parseQuotationMarks</code> that combine primitive parsers into higher-level constructs.</li>
+<li><strong>Types:</strong> The DSL is mapped to strongly-typed Haskell data structures, ensuring that only valid scripts are accepted and making it easy to extend the language.</li>
+<li><strong>Why Haskell:</strong> Haskell’s type system and purity make it easy to write correct, composable parsers. Megaparsec’s error messages and combinator style are a perfect fit for evolving a DSL.</li>
+</ul>
+<h3 id="tools-used">Tools Used</h3>
+<ul>
+<li><strong>Haskell:</strong> For all backend, API, and DSL logic.</li>
+<li><strong>Servant:</strong> Type-safe API definition and server.</li>
+<li><strong>Megaparsec:</strong> Parser combinators for the DSL.</li>
+<li><strong>postgresql-simple:</strong> Database access.</li>
+<li><strong>Amazonka:</strong> AWS integration (S3, etc.).</li>
+<li><strong>Nx:</strong> Monorepo management.</li>
+<li><strong>Node.js, Vite, React, Tailwind:</strong> For frontend apps in apps and <code>website/</code>.</li>
+<li><strong>Terraform:</strong> Infrastructure as code.</li>
+<li><strong>Nix Flakes:</strong> Reproducible dev environments.</li>
+</ul>
+<h2 id="dev-environment-nix-flakes-for-reproducibility">Dev Environment: Nix Flakes for Reproducibility</h2>
+<p>The repo uses Nix Flakes (flake.nix) to define a reproducible development environment. This means:</p>
+<ul>
+<li>All dependencies (Haskell toolchain, Node, DB clients, etc.) are specified declaratively.</li>
+<li>Onboarding is as simple as running <code>nix develop</code>—no more “works on my machine.”</li>
+<li>CI/CD and local dev use the exact same tool versions, reducing surprises.</li>
+</ul>
+<hr>
+<p><strong>In summary:</strong><br>
+Haskell’s type safety and composability make it the perfect choice for building robust APIs and custom DSLs. Servant and Megaparsec provide a type-driven, maintainable foundation for both web and language features, while Nix Flakes ensures every contributor has a consistent, reliable dev environment.</p>
+
     </div>
-    
-    <div class="project-card">
-
-        
-        <h3><a href="http://localhost:1313/projects/carleton-revamped/">cuNext</a></h3>
-        
-
-        <div class="post-meta">Figma, Design Systems • March 2025
-        </div>
-        
-        <p>How we revamped Carleton&#39;s outdated UI for accessibility through market research, and design systems</p>
-        
-        <div class="project-links">
-            
-            <a href="https://github.com/MFarabi619/cuNext" target="_blank">[ github ]</a>
-            
-            
-            <a href="https://carleton-central-redesign.gadget.app/" target="_blank">[ demo ]</a>
-            
-
-            
-            <a href="http://localhost:1313/projects/carleton-revamped/">[ details ]</a>
-            
-        </div>
-    </div>
-    
-    <div class="project-card">
-
-        
-        <h3>
-            
-            <a href="https://carletoncusec.com/" target="_blank">CCSS Website</a>
-            
-        </h3>
-        
-
-        <div class="post-meta">React • April 2024
-        </div>
-        
-        <p>My first time leading a team of developers and going through an entire process of working with a client to design and deploy their app.</p>
-        
-        <div class="project-links">
-            
-            <a href="https://github.com/Carleton-Blueprint/CCS-Landing-Page" target="_blank">[ github ]</a>
-            
-            
-            <a href="https://carletoncusec.com/" target="_blank">[ demo ]</a>
-            
-
-            
-        </div>
-    </div>
-    
-    <div class="project-card">
-
-        
-        <h3>
-            
-            <a href="https://devpost.com/software/communiplant" target="_blank">Communiplant</a>
-            
-        </h3>
-        
-
-        <div class="post-meta">React, Danjgo • March 2024
-        </div>
-        
-        <p>Led a team of 3 to a 2nd overall at UOttaHack6, Canada&#39;s second largest Hackathon. This is a community platform that uses AI to detect how eco-friendly your neighbourhood is and promotes eco-diversity by using computer vision to detect plant species.</p>
-        
-        <div class="project-links">
-            
-            <a href="https://github.com/sbilalshaikh/uottahack2024" target="_blank">[ github ]</a>
-            
-            
-            <a href="https://devpost.com/software/communiplant" target="_blank">[ demo ]</a>
-            
-
-            
-        </div>
-    </div>
-    
-    <div class="project-card">
-
-        
-        <h3>
-            
-            <a href="https://projecttechcareers.com/" target="_blank">Project Tech Careers</a>
-            
-        </h3>
-        
-
-        <div class="post-meta">Django, HTML, JavaScript/React • December 2023
-        </div>
-        
-        <p>ProjectTechCareers is a student-led initiative aimed at helping high-school students find their passion! I was a technical lead for this and helped create the website.</p>
-        
-        <div class="project-links">
-            
-            
-            <a href="https://projecttechcareers.com/" target="_blank">[ demo ]</a>
-            
-
-            
-        </div>
-    </div>
-    
-    <div class="project-card">
-
-        
-        <h3>
-            
-            <a href="https://youtu.be/zvMFroSTLcg" target="_blank">MusicMania</a>
-            
-        </h3>
-        
-
-        <div class="post-meta">React, Flask • November 2023
-        </div>
-        
-        <p>My first original project. This tool would help users find others with similar music taste to you and allow you to see their top songs, playlist, and favourite artists. Made obsolete with LastFM&#39;s new feature to find &#39;music neighbours&#39;.</p>
-        
-        <div class="project-links">
-            
-            <a href="https://github.com/HasithDeAlwis/musicmania" target="_blank">[ github ]</a>
-            
-            
-            <a href="https://youtu.be/zvMFroSTLcg" target="_blank">[ demo ]</a>
-            
-
-            
-        </div>
-    </div>
-    
-    <div class="project-card">
-
-        
-        <h3>
-            
-            <a href="https://chatathon.onrender.com/" target="_blank">Chatathon</a>
-            
-        </h3>
-        
-
-        <div class="post-meta">React, Express, MongoDB • September 2023
-        </div>
-        
-        <p>The first thing I ever coded. A simple instant-messaging app that uses Websockets. I learned how to code using this project.</p>
-        
-        <div class="project-links">
-            
-            <a href="https://github.com/HasithDeAlwis/Messaging-app" target="_blank">[ github ]</a>
-            
-            
-            <a href="https://chatathon.onrender.com/" target="_blank">[ demo ]</a>
-            
-
-            
-        </div>
-    </div>
-    
-</div>
+</article>
 
 
         </main>

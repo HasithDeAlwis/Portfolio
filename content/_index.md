@@ -2,7 +2,6 @@
 title: "Hasith De Alwis"
 date: 2025-08-09
 ---
-## I'm an Engineer, Student, and Hacker
 
 I study Computer Science at the University of Carleton
 I was a previous intern at [**SurveyMonkey**](https://www.surveymonkey.com/)

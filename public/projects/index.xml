@@ -6,35 +6,63 @@
     <description>Recent content in Projects on &gt; Hasith De Alwis</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Video Diffusion Models at WOMBO</title>
-      <link>http://localhost:1313/projects/video-diffusion/</link>
-      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/video-diffusion/</guid>
-      <description>&lt;p&gt;Built and optimized one of the first commercially successful video diffusion models, reaching over 100 million users in just 2 months.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-achievements&#34;&gt;Key Achievements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Implemented state-of-the-art video generation algorithms&lt;/li&gt;&#xA;&lt;li&gt;Optimized inference pipeline for real-time generation&lt;/li&gt;&#xA;&lt;li&gt;Scaled infrastructure to handle millions of daily requests&lt;/li&gt;&#xA;&lt;li&gt;Collaborated with research team on novel architectural improvements&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; PyTorch, CUDA, Docker, Kubernetes, Python&lt;/p&gt;</description>
+      <title>Syncgen</title>
+      <link>http://localhost:1313/projects/syncgen/</link>
+      <pubDate>Mon, 25 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/syncgen/</guid>
+      <description>&lt;h1 id=&#34;what&#34;&gt;What&lt;/h1&gt;&#xA;&lt;p&gt;ha-syncgen is a declarative infrastructure tool designed to simplify the setup of high-availability PostgreSQL database clusters. The project takes a YAML-based configuration approach where users define their primary database server and replica nodes along with synchronization parameters, and the tool automatically generates all the necessary scripts, systemd services, and configuration files needed to maintain the cluster. The tool uses rsync for data synchronization between the primary and replica nodes, with configurable sync intervals and automatic health monitoring.&#xA;The generated infrastructure includes individual sync scripts for each replica, health check scripts that monitor the primary server&amp;rsquo;s availability, systemd service and timer units for automated operation, and PostgreSQL configuration patches.&#xA;The backbone of this project is WAL streaming, which is already built-in to PostgreSQL, allowing us to be certain that the data sent over is not corrupted, which could be the case if we use something like &lt;code&gt;rsync&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Blockchain Transaction System</title>
-      <link>http://localhost:1313/projects/blockchain-system/</link>
-      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/blockchain-system/</guid>
-      <description>&lt;p&gt;Collaborated on building a high-volume blockchain transaction system managing over $600M in transaction volume.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Smart contract development and optimization&lt;/li&gt;&#xA;&lt;li&gt;Real-time transaction monitoring&lt;/li&gt;&#xA;&lt;li&gt;Gas optimization algorithms&lt;/li&gt;&#xA;&lt;li&gt;Multi-chain support&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Solidity, Web3.js, React, Node.js, PostgreSQL&lt;/p&gt;</description>
+      <title>SketchScript</title>
+      <link>http://localhost:1313/projects/sketch-script/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/sketch-script/</guid>
+      <description>&lt;h1 id=&#34;what&#34;&gt;What&lt;/h1&gt;&#xA;&lt;p&gt;SketchScript is a Domain-Specific Language (DSL) built in Haskell that serves as a code-driven alternative to visual mockup tools like Balsamiq or Figma wireframes. It&amp;rsquo;s designed for designers and developers who prefer to create UI mockups programmatically.&lt;/p&gt;&#xA;&lt;h1 id=&#34;why&#34;&gt;Why&lt;/h1&gt;&#xA;&lt;p&gt;With advancements in LLMs the jobs of designers and front-end developers moves closer and closer.&lt;/p&gt;&#xA;&lt;p&gt;With tools such as &lt;a href=&#34;https://www.figma.com/blog/introducing-figmas-dev-mode-mcp-server/&#34;&gt;Figma MCP&lt;/a&gt; coming around the block to be publicly available, designers must learn the basics of CSS layout tools (such as Flex, Grid, etc.), otherwise, the MCP server will be much less effective.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Multi-Modal ML Training Tools</title>
-      <link>http://localhost:1313/projects/ml-tools/</link>
-      <pubDate>Tue, 10 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/ml-tools/</guid>
-      <description>&lt;p&gt;Open-sourced comprehensive toolkit for training state-of-the-art multi-modal machine learning models.&lt;/p&gt;&#xA;&lt;h2 id=&#34;components&#34;&gt;Components&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Efficient data loading pipelines&lt;/li&gt;&#xA;&lt;li&gt;Distributed training frameworks&lt;/li&gt;&#xA;&lt;li&gt;Model evaluation metrics&lt;/li&gt;&#xA;&lt;li&gt;Hyperparameter optimization tools&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Python, PyTorch, Ray, Weights &amp;amp; Biases, Docker&lt;/p&gt;</description>
+      <title>cuNext</title>
+      <link>http://localhost:1313/projects/carleton-revamped/</link>
+      <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/carleton-revamped/</guid>
+      <description>&lt;h1 id=&#34;what--why&#34;&gt;What &amp;amp; Why&lt;/h1&gt;&#xA;&lt;p&gt;cuNext was a project done at &lt;a href=&#34;https://2024.uottahack.ca/&#34;&gt;UOttaHack6&lt;/a&gt;, our team set out to update Carleton&amp;rsquo;s outdated and inaccessible UI. We also implemented a course scheduler that used backtracking algorithms to ensure that no course conflicts would occur.&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/cuNext-homepage.png&#34;&#xA;    alt=&#34;low coupling high cohesion&#34; width=&#34;100%&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Our homepage&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;design-system-at-work&#34;&gt;Design System at Work&lt;/h1&gt;&#xA;&lt;p&gt;See the entirety of our design system at work &lt;a href=&#34;https://www.figma.com/design/yCW89M8HS3Rq4oxdHOkDHF/%E2%9C%A8-cuNext?node-id=230-3182&amp;amp;t=uQpzRWAydJePrWI3-1&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Send Story - Rock Climbing Gear</title>
-      <link>http://localhost:1313/projects/send-story/</link>
-      <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/send-story/</guid>
-      <description>&lt;p&gt;Founded and built an e-commerce platform for rock climbing products, serving over 10,000 athletes across 15 countries.&lt;/p&gt;&#xA;&lt;h2 id=&#34;business-impact&#34;&gt;Business Impact&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;International shipping and logistics&lt;/li&gt;&#xA;&lt;li&gt;Custom product design and manufacturing&lt;/li&gt;&#xA;&lt;li&gt;Community building and athlete sponsorships&lt;/li&gt;&#xA;&lt;li&gt;Sustainable growth and profitability&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; React, Node.js, Stripe, Shopify, AWS&lt;/p&gt;&#xA;&lt;h2 id=&#34;business-impact-1&#34;&gt;Business Impact&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;International shipping and logistics&lt;/li&gt;&#xA;&lt;li&gt;Custom product design and manufacturing&lt;/li&gt;&#xA;&lt;li&gt;Community building and athlete sponsorships&lt;/li&gt;&#xA;&lt;li&gt;Sustainable growth and profitability&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; React, Node.js, Stripe, Shopify, AWS&lt;/p&gt;</description>
+      <title>CCSS Website</title>
+      <link>http://localhost:1313/projects/ccss/</link>
+      <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/ccss/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Communiplant</title>
+      <link>http://localhost:1313/projects/communiplant/</link>
+      <pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/communiplant/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Project Tech Careers</title>
+      <link>http://localhost:1313/projects/ptc/</link>
+      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/ptc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MusicMania</title>
+      <link>http://localhost:1313/projects/music-mania/</link>
+      <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/music-mania/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Chatathon</title>
+      <link>http://localhost:1313/projects/chatathon/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/chatathon/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

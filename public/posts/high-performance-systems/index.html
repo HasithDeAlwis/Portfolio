@@ -4,9 +4,45 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Building High-Performance Systems: Lessons from CentML | &gt; Hasith De Alwis</title>
+    <title> | &gt; Hasith De Alwis</title>
     <style>
-        * {
+        <nav><a href="/" {
+                {
+                if .IsHome
+            }
+        }
+
+        class="active" {
+                {
+                end
+            }
+        }
+
+        >[ home]</a><a href="/blog/" {
+                {
+                if eq .Section "blog"
+            }
+        }
+
+        class="active" {
+                {
+                end
+            }
+        }
+
+        >[ blog]</a><a href="/projects/" {
+                {
+                if eq .Section "projects"
+            }
+        }
+
+        class="active" {
+                {
+                end
+            }
+        }
+
+        >[ projects]</a></nav>* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -268,6 +304,48 @@
             font-size: 12px;
             line-height: 1.4;
         }
+
+        .blog-banner {
+            background-color: #404040;
+            color: #ffffff;
+            padding: 40px 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .blog-banner-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .blog-banner h1 {
+            font-size: 32px;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+            font-weight: normal;
+        }
+
+        .blog-banner .post-meta {
+            color: #b0b0b0;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .blog-post {
+            margin: 0;
+            padding: 0;
+        }
+
+        .blog-content {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .blog-content article {
+            margin: 0;
+        }
     </style>
 </head>
 
@@ -282,46 +360,32 @@
             </div>
             <nav>
                 <a href="/" >[ home ]</a>
-                <a href="/posts/" class="active" >[ blog ]</a>
+                <a href="/blog/" >[ blog ]</a>
                 <a href="/projects/" >[ projects ]</a>
             </nav>
         </header>
 
         <main>
             
+<style>
+    code {
+        background-color: transparent;
+    }
+</style>
 
 <article>
     <header>
-        <h1>Building High-Performance Systems: Lessons from CentML</h1>
+        <h1></h1>
         <div class="post-meta">
             
-            Published on August 7, 2025
+            Published on January 1, 0001
             
         </div>
         
     </header>
 
     <div class="content">
-        <h1 id="building-high-performance-systems-lessons-from-centml">Building High-Performance Systems: Lessons from CentML</h1>
-<p>Working as a Software Engineering Intern at CentML has given me deep insights into what it takes to build truly high-performance machine learning infrastructure.</p>
-<h2 id="performance-first-mindset">Performance-First Mindset</h2>
-<p>At CentML, every decision is made with performance in mind. This isn&rsquo;t just about making things fast - it&rsquo;s about understanding the fundamental trade-offs in distributed systems and making conscious choices.</p>
-<h2 id="key-principles">Key Principles</h2>
-<p><strong>Memory Efficiency</strong>: Every byte matters when you&rsquo;re working with large models. We spend significant time profiling memory usage and optimizing allocation patterns.</p>
-<p><strong>Computational Efficiency</strong>: Understanding hardware capabilities and designing algorithms that take advantage of modern GPU architectures.</p>
-<p><strong>Network Optimization</strong>: In distributed training, network bandwidth often becomes the bottleneck. Smart gradient compression and communication scheduling are crucial.</p>
-<h2 id="tools-and-techniques">Tools and Techniques</h2>
-<p>Some of the techniques that have made the biggest impact:</p>
-<ul>
-<li><strong>Profiling-driven optimization</strong> - Measure first, optimize second</li>
-<li><strong>Custom operators</strong> - Writing CUDA kernels for specific use cases</li>
-<li><strong>Memory pooling</strong> - Reducing allocation overhead</li>
-<li><strong>Asynchronous processing</strong> - Overlapping computation and communication</li>
-</ul>
-<h2 id="the-future-of-ml-infrastructure">The Future of ML Infrastructure</h2>
-<p>As models continue to grow in size and complexity, the infrastructure challenge becomes even more critical. The companies that solve these problems will enable the next generation of AI applications.</p>
-<p>Working at CentML has shown me that there&rsquo;s still so much room for innovation in this space. The intersection of systems engineering and machine learning is where some of the most impactful work is happening.</p>
-
+        
     </div>
 </article>
 
@@ -330,10 +394,9 @@
 
         <footer>
             <div class="social-links">
-                <a href="#">[ Github ]</a>
-                <a href="#">[ Twitter ]</a>
-                <a href="#">[ Email ]</a>
-                <a href="#">[ LinkedIn ]</a>
+                <a href="https://github.com/HasithDeAlwis">[ Github ]</a>
+                <a href="mailto:hasithde24@gmail.com">[ Email ]</a>
+                <a href="https://www.linkedin.com/in/hasith-de-alwis/">[ LinkedIn ]</a>
             </div>
             <div class="status-line">
                 &copy; 2025 &gt; Hasith De Alwis -- Built with Hugo and Emacs vibes

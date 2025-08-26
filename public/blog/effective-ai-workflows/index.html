@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
+    <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Workflows, Ignore the Hype | &gt; Hasith De Alwis</title>
@@ -356,41 +357,51 @@
                 <a href="/">&gt; Hasith De Alwis</a>
             </div>
             <div class="header-subtitle">
-                <h1>I'm an Engineer, Student, and Hacker</h1>
+                <h1>I'm a builder</h1>
             </div>
             <nav>
-                <a href="/" >[ home ]</a>
-                <a href="/blog/" class="active" >[ blog ]</a>
-                <a href="/projects/" >[ projects ]</a>
+                <a href="/">[ home ]</a>
+                <a href="/blog/" class="active">[ blog ]</a>
+                <a href="/projects/">[ projects ]</a>
             </nav>
         </header>
 
         <main>
-            
-<style>
-    code {
-        background-color: transparent;
-    }
-</style>
+
+            <style>
+                code {
+                    background-color: transparent;
+                }
+            </style>
 
 
-<div class="blog-post">
-    <div class="blog-banner">
-        <div class="blog-banner-content">
-            <h1>AI Workflows, Ignore the Hype</h1>
-            <div class="post-meta">
-                Published on July 24, 2025
-            </div>
-        </div>
-    </div>
-    <div class="blog-content">
-        <article>
-            <div class="content">
-                <h1 id="building-thread-safe-event-systems-in-go-a-k6-waitforresponse-case-study">Building Thread-Safe Event Systems in Go: A k6 waitForResponse Case Study</h1>
-<p>Browser automation tools need to wait for specific network responses—but building this in a concurrent system is trickier than it looks. When testing web applications, you often need to wait for an API call to complete before proceeding with the next action. Without proper synchronization, tests become flaky and unreliable. Recently, I contributed the <code>waitForResponse</code> API to k6&rsquo;s browser module, architecting a thread-safe event system that handles hundreds of concurrent waiters without race conditions or resource leaks.</p>
-<h2 id="the-problem-reflection-hell">The Problem: Reflection Hell</h2>
-<p>The initial approach used k6&rsquo;s generic event handler system with reflection-based cleanup. Here&rsquo;s what the problematic code looked like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Page</span>) <span style="color:#a6e22e">WaitForResponse</span>(<span style="color:#f92672">...</span>) {
+            <div class="blog-post">
+                <div class="blog-banner">
+                    <div class="blog-banner-content">
+                        <h1>AI Workflows, Ignore the Hype</h1>
+                        <div class="post-meta">
+                            Published on July 24, 2025
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <article>
+                        <div class="content">
+                            <h1 id="building-thread-safe-event-systems-in-go-a-k6-waitforresponse-case-study">Building
+                                Thread-Safe Event Systems in Go: A k6 waitForResponse Case Study</h1>
+                            <p>Browser automation tools need to wait for specific network responses—but building this in
+                                a concurrent system is trickier than it looks. When testing web applications, you often
+                                need to wait for an API call to complete before proceeding with the next action. Without
+                                proper synchronization, tests become flaky and unreliable. Recently, I contributed the
+                                <code>waitForResponse</code> API to k6&rsquo;s browser module, architecting a
+                                thread-safe event system that handles hundreds of concurrent waiters without race
+                                conditions or resource leaks.</p>
+                            <h2 id="the-problem-reflection-hell">The Problem: Reflection Hell</h2>
+                            <p>The initial approach used k6&rsquo;s generic event handler system with reflection-based
+                                cleanup. Here&rsquo;s what the problematic code looked like:</p>
+                            <div class="highlight">
+                                <pre tabindex="0"
+                                    style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Page</span>) <span style="color:#a6e22e">WaitForResponse</span>(<span style="color:#f92672">...</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Manually add handler to generic event system</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">eventHandlers</span>[<span style="color:#a6e22e">EventPageResponseCalled</span>] = append(
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">eventHandlers</span>[<span style="color:#a6e22e">EventPageResponseCalled</span>], <span style="color:#a6e22e">handler</span>)
@@ -406,12 +417,29 @@
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }()
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This approach had serious issues: race conditions when multiple goroutines modified the handler slice, resource leaks when cleanup failed, and reflection-based pointer comparisons that were fragile and hard to debug. The generic event system wasn&rsquo;t designed for the specific needs of blocking operations with automatic cleanup.</p>
-<h2 id="design-requirements-what-success-looks-like">Design Requirements: What Success Looks Like</h2>
-<p>The replacement system needed to handle several critical requirements. First, thread-safe concurrent access—multiple goroutines should be able to register waiters simultaneously without corruption. Second, automatic resource cleanup—no manual tracking of handler instances or complex reflection logic. Third, efficient pattern matching for URL filtering using both string matches and regex patterns. Finally, seamless integration with k6&rsquo;s existing context cancellation and timeout systems. The solution needed to handle edge cases like timeouts and context cancellation gracefully while maintaining high performance under load.</p>
-<h2 id="the-core-architecture-dedicated-event-handler">The Core Architecture: Dedicated Event Handler</h2>
-<p>Instead of forcing blocking operations into a generic event system, I designed a dedicated <code>ResponseEventHandler</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ResponseEventHandler</span> <span style="color:#66d9ef">struct</span> {
+</span></span></code></pre>
+                            </div>
+                            <p>This approach had serious issues: race conditions when multiple goroutines modified the
+                                handler slice, resource leaks when cleanup failed, and reflection-based pointer
+                                comparisons that were fragile and hard to debug. The generic event system wasn&rsquo;t
+                                designed for the specific needs of blocking operations with automatic cleanup.</p>
+                            <h2 id="design-requirements-what-success-looks-like">Design Requirements: What Success Looks
+                                Like</h2>
+                            <p>The replacement system needed to handle several critical requirements. First, thread-safe
+                                concurrent access—multiple goroutines should be able to register waiters simultaneously
+                                without corruption. Second, automatic resource cleanup—no manual tracking of handler
+                                instances or complex reflection logic. Third, efficient pattern matching for URL
+                                filtering using both string matches and regex patterns. Finally, seamless integration
+                                with k6&rsquo;s existing context cancellation and timeout systems. The solution needed
+                                to handle edge cases like timeouts and context cancellation gracefully while maintaining
+                                high performance under load.</p>
+                            <h2 id="the-core-architecture-dedicated-event-handler">The Core Architecture: Dedicated
+                                Event Handler</h2>
+                            <p>Instead of forcing blocking operations into a generic event system, I designed a
+                                dedicated <code>ResponseEventHandler</code>:</p>
+                            <div class="highlight">
+                                <pre tabindex="0"
+                                    style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ResponseEventHandler</span> <span style="color:#66d9ef">struct</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">mu</span>           <span style="color:#a6e22e">sync</span>.<span style="color:#a6e22e">RWMutex</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">activeWaiters</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">responseWaiter</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">nextWaiterID</span>  <span style="color:#66d9ef">int64</span>
@@ -424,10 +452,19 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ctx</span>          <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">Context</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cancel</span>       <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">CancelFunc</span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This separation of concerns eliminates the complexity of generic handlers while providing exactly what blocking operations need: unique waiter identification, context-based lifecycle management, and efficient lookup patterns. Each waiter gets its own dedicated channel and context, making cleanup deterministic and race-free.</p>
-<h2 id="thread-safety-lock-free-notification-pattern">Thread Safety: Lock-Free Notification Pattern</h2>
-<p>The key insight was separating read operations from write operations to minimize lock contention:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">reh</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ResponseEventHandler</span>) <span style="color:#a6e22e">processResponse</span>(<span style="color:#a6e22e">response</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Response</span>) {
+</span></span></code></pre>
+                            </div>
+                            <p>This separation of concerns eliminates the complexity of generic handlers while providing
+                                exactly what blocking operations need: unique waiter identification, context-based
+                                lifecycle management, and efficient lookup patterns. Each waiter gets its own dedicated
+                                channel and context, making cleanup deterministic and race-free.</p>
+                            <h2 id="thread-safety-lock-free-notification-pattern">Thread Safety: Lock-Free Notification
+                                Pattern</h2>
+                            <p>The key insight was separating read operations from write operations to minimize lock
+                                contention:</p>
+                            <div class="highlight">
+                                <pre tabindex="0"
+                                    style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">reh</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ResponseEventHandler</span>) <span style="color:#a6e22e">processResponse</span>(<span style="color:#a6e22e">response</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Response</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">reh</span>.<span style="color:#a6e22e">mu</span>.<span style="color:#a6e22e">RLock</span>()
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">waitersToNotify</span> <span style="color:#f92672">:=</span> make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">responseWaiter</span>, <span style="color:#ae81ff">0</span>)
 </span></span><span style="display:flex;"><span>    
@@ -447,10 +484,19 @@
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This pattern allows high-concurrency reads while ensuring notifications happen outside the critical section. The non-blocking send prevents deadlocks when contexts are cancelled mid-notification, and the RWMutex optimizes for the common case of many concurrent response processors with fewer waiter registrations.</p>
-<h2 id="resource-management-context-driven-cleanup">Resource Management: Context-Driven Cleanup</h2>
-<p>Rather than manual cleanup tracking, the system leverages Go&rsquo;s context cancellation for automatic resource management:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Page</span>) <span style="color:#a6e22e">WaitForResponse</span>(<span style="color:#a6e22e">urlPattern</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">opts</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">WaitForResponseOptions</span>) (<span style="color:#f92672">*</span><span style="color:#a6e22e">Response</span>, <span style="color:#66d9ef">error</span>) {
+</span></span></code></pre>
+                            </div>
+                            <p>This pattern allows high-concurrency reads while ensuring notifications happen outside
+                                the critical section. The non-blocking send prevents deadlocks when contexts are
+                                cancelled mid-notification, and the RWMutex optimizes for the common case of many
+                                concurrent response processors with fewer waiter registrations.</p>
+                            <h2 id="resource-management-context-driven-cleanup">Resource Management: Context-Driven
+                                Cleanup</h2>
+                            <p>Rather than manual cleanup tracking, the system leverages Go&rsquo;s context cancellation
+                                for automatic resource management:</p>
+                            <div class="highlight">
+                                <pre tabindex="0"
+                                    style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Page</span>) <span style="color:#a6e22e">WaitForResponse</span>(<span style="color:#a6e22e">urlPattern</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">opts</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">WaitForResponseOptions</span>) (<span style="color:#f92672">*</span><span style="color:#a6e22e">Response</span>, <span style="color:#66d9ef">error</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ctx</span>, <span style="color:#a6e22e">cancel</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">WithTimeout</span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">ctx</span>, <span style="color:#a6e22e">opts</span>.<span style="color:#a6e22e">Timeout</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">cancel</span>()
 </span></span><span style="display:flex;"><span>    
@@ -461,18 +507,52 @@
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">responseEventHandler</span>.<span style="color:#a6e22e">waitForMatch</span>(<span style="color:#a6e22e">ctx</span>, <span style="color:#a6e22e">matcher</span>)
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>When the context expires or gets cancelled, cleanup happens automatically through the defer chain. No more hunting for specific handler instances in slices or complex reflection logic. The waiter removes itself from the active map when its context completes, ensuring zero resource leaks even under high load or unexpected cancellations.</p>
-<h2 id="real-world-testing-edge-cases-and-performance">Real-World Testing: Edge Cases and Performance</h2>
-<p>Integration testing revealed several edge cases that the architecture handled gracefully. Concurrent timeouts with overlapping response patterns worked without interference. Context cancellation during high-volume response processing didn&rsquo;t cause goroutine leaks. The system maintained consistent performance with 100+ concurrent waiters, and memory usage remained stable over extended test runs. Code review feedback led to switching from buffered to unbuffered channels, eliminating potential synchronization smells and making the concurrency model clearer. The reviewer&rsquo;s attention to detail helped identify potential panic scenarios that were addressed through proper channel lifecycle management.</p>
-<h2 id="key-takeaways-patterns-that-scale">Key Takeaways: Patterns That Scale</h2>
-<p>Three main lessons emerged from this implementation. First, dedicated data structures often outperform generic solutions in concurrent systems—the complexity savings and performance benefits justify the additional code. Second, proper Go concurrency patterns (RWMutex for read-heavy workloads, context-based cancellation, non-blocking sends) prevent entire classes of bugs before they happen. Third, resource lifecycle management becomes much simpler when you design for it upfront rather than retrofitting cleanup logic. This approach improved maintainability significantly—the new code is easier to understand, debug, and extend. The pattern is now being used across multiple k6 browser APIs where blocking operations are needed.</p>
-<h2 id="impact-and-future-building-on-solid-foundations">Impact and Future: Building on Solid Foundations</h2>
-<p>The PR was successfully merged into k6&rsquo;s main branch, adding a critical piece of browser automation functionality that developers had been requesting. The thread-safe architecture enables reliable testing of applications with complex network timing requirements, particularly important for load testing scenarios where network conditions vary. This foundation also sets up future enhancements like predicate function support (<code>await page.waitForResponse(response =&gt; response.status() === 200)</code>) and more sophisticated filtering options. Most importantly, the architectural patterns demonstrated here—dedicated concurrent data structures, context-driven resource management, and lock-free notification systems—are applicable far beyond browser automation to any Go system that needs reliable event handling under concurrent load.</p>
+</span></span></code></pre>
+                            </div>
+                            <p>When the context expires or gets cancelled, cleanup happens automatically through the
+                                defer chain. No more hunting for specific handler instances in slices or complex
+                                reflection logic. The waiter removes itself from the active map when its context
+                                completes, ensuring zero resource leaks even under high load or unexpected
+                                cancellations.</p>
+                            <h2 id="real-world-testing-edge-cases-and-performance">Real-World Testing: Edge Cases and
+                                Performance</h2>
+                            <p>Integration testing revealed several edge cases that the architecture handled gracefully.
+                                Concurrent timeouts with overlapping response patterns worked without interference.
+                                Context cancellation during high-volume response processing didn&rsquo;t cause goroutine
+                                leaks. The system maintained consistent performance with 100+ concurrent waiters, and
+                                memory usage remained stable over extended test runs. Code review feedback led to
+                                switching from buffered to unbuffered channels, eliminating potential synchronization
+                                smells and making the concurrency model clearer. The reviewer&rsquo;s attention to
+                                detail helped identify potential panic scenarios that were addressed through proper
+                                channel lifecycle management.</p>
+                            <h2 id="key-takeaways-patterns-that-scale">Key Takeaways: Patterns That Scale</h2>
+                            <p>Three main lessons emerged from this implementation. First, dedicated data structures
+                                often outperform generic solutions in concurrent systems—the complexity savings and
+                                performance benefits justify the additional code. Second, proper Go concurrency patterns
+                                (RWMutex for read-heavy workloads, context-based cancellation, non-blocking sends)
+                                prevent entire classes of bugs before they happen. Third, resource lifecycle management
+                                becomes much simpler when you design for it upfront rather than retrofitting cleanup
+                                logic. This approach improved maintainability significantly—the new code is easier to
+                                understand, debug, and extend. The pattern is now being used across multiple k6 browser
+                                APIs where blocking operations are needed.</p>
+                            <h2 id="impact-and-future-building-on-solid-foundations">Impact and Future: Building on
+                                Solid Foundations</h2>
+                            <p>The PR was successfully merged into k6&rsquo;s main branch, adding a critical piece of
+                                browser automation functionality that developers had been requesting. The thread-safe
+                                architecture enables reliable testing of applications with complex network timing
+                                requirements, particularly important for load testing scenarios where network conditions
+                                vary. This foundation also sets up future enhancements like predicate function support
+                                (<code>await page.waitForResponse(response =&gt; response.status() === 200)</code>) and
+                                more sophisticated filtering options. Most importantly, the architectural patterns
+                                demonstrated here—dedicated concurrent data structures, context-driven resource
+                                management, and lock-free notification systems—are applicable far beyond browser
+                                automation to any Go system that needs reliable event handling under concurrent load.
+                            </p>
 
+                        </div>
+                    </article>
+                </div>
             </div>
-        </article>
-    </div>
-</div>
 
 
         </main>
@@ -484,7 +564,7 @@
                 <a href="https://www.linkedin.com/in/hasith-de-alwis/">[ LinkedIn ]</a>
             </div>
             <div class="status-line">
-                &copy; 2025 &gt; Hasith De Alwis -- Built with Hugo and Emacs vibes
+                &copy; 2025 &gt; Hasith De Alwis -- Built with Hugo
             </div>
         </footer>
     </div>

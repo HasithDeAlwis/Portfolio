@@ -4,9 +4,45 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scaling Video Diffusion Models to 100M&#43; Users | &gt; Hasith De Alwis</title>
+    <title> | &gt; Hasith De Alwis</title>
     <style>
-        * {
+        <nav><a href="/" {
+                {
+                if .IsHome
+            }
+        }
+
+        class="active" {
+                {
+                end
+            }
+        }
+
+        >[ home]</a><a href="/blog/" {
+                {
+                if eq .Section "blog"
+            }
+        }
+
+        class="active" {
+                {
+                end
+            }
+        }
+
+        >[ blog]</a><a href="/projects/" {
+                {
+                if eq .Section "projects"
+            }
+        }
+
+        class="active" {
+                {
+                end
+            }
+        }
+
+        >[ projects]</a></nav>* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -268,6 +304,48 @@
             font-size: 12px;
             line-height: 1.4;
         }
+
+        .blog-banner {
+            background-color: #404040;
+            color: #ffffff;
+            padding: 40px 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .blog-banner-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .blog-banner h1 {
+            font-size: 32px;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+            font-weight: normal;
+        }
+
+        .blog-banner .post-meta {
+            color: #b0b0b0;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .blog-post {
+            margin: 0;
+            padding: 0;
+        }
+
+        .blog-content {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .blog-content article {
+            margin: 0;
+        }
     </style>
 </head>
 
@@ -282,57 +360,32 @@
             </div>
             <nav>
                 <a href="/" >[ home ]</a>
-                <a href="/posts/" class="active" >[ blog ]</a>
+                <a href="/blog/" >[ blog ]</a>
                 <a href="/projects/" >[ projects ]</a>
             </nav>
         </header>
 
         <main>
             
+<style>
+    code {
+        background-color: transparent;
+    }
+</style>
 
 <article>
     <header>
-        <h1>Scaling Video Diffusion Models to 100M&#43; Users</h1>
+        <h1></h1>
         <div class="post-meta">
             
-            Published on August 8, 2025
+            Published on January 1, 0001
             
         </div>
         
     </header>
 
     <div class="content">
-        <h1 id="scaling-video-diffusion-models-to-100m-users">Scaling Video Diffusion Models to 100M+ Users</h1>
-<p>At WOMBO, I had the incredible opportunity to work on scaling one of the first commercially successful video diffusion models. Here&rsquo;s what I learned about building AI systems that can handle massive scale.</p>
-<h2 id="the-challenge">The Challenge</h2>
-<p>When we launched our video generation feature, we had no idea it would reach 100+ million users in just 2 months. The initial prototype was built for research, not production scale.</p>
-<h2 id="performance-optimizations">Performance Optimizations</h2>
-<p>The key breakthroughs came from:</p>
-<ul>
-<li><strong>Model quantization</strong> - Reducing memory footprint by 4x</li>
-<li><strong>Batch processing</strong> - Intelligent request batching for GPU efficiency</li>
-<li><strong>Caching strategies</strong> - Pre-computing common generation paths</li>
-<li><strong>Infrastructure scaling</strong> - Auto-scaling Kubernetes clusters</li>
-</ul>
-<h2 id="technical-deep-dive">Technical Deep Dive</h2>
-<p>Our inference pipeline had to handle:</p>
-<ul>
-<li>10,000+ concurrent requests</li>
-<li>Sub-30 second generation times</li>
-<li>Dynamic memory management</li>
-<li>Graceful degradation under load</li>
-</ul>
-<p>The most challenging part was maintaining quality while optimizing for speed. We developed custom CUDA kernels and worked closely with the research team to find the sweet spot between performance and output quality.</p>
-<h2 id="lessons-learned">Lessons Learned</h2>
-<p>Building AI systems at scale is fundamentally different from research. You need to think about:</p>
-<ul>
-<li>User experience and expectations</li>
-<li>Cost efficiency and resource utilization</li>
-<li>Monitoring and observability</li>
-<li>Failure modes and recovery</li>
-</ul>
-<p>This experience taught me that the gap between research and production is where the real engineering challenges lie.</p>
-
+        
     </div>
 </article>
 
@@ -341,10 +394,9 @@
 
         <footer>
             <div class="social-links">
-                <a href="#">[ Github ]</a>
-                <a href="#">[ Twitter ]</a>
-                <a href="#">[ Email ]</a>
-                <a href="#">[ LinkedIn ]</a>
+                <a href="https://github.com/HasithDeAlwis">[ Github ]</a>
+                <a href="mailto:hasithde24@gmail.com">[ Email ]</a>
+                <a href="https://www.linkedin.com/in/hasith-de-alwis/">[ LinkedIn ]</a>
             </div>
             <div class="status-line">
                 &copy; 2025 &gt; Hasith De Alwis -- Built with Hugo and Emacs vibes

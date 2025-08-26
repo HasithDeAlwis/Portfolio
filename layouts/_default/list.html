@@ -12,7 +12,21 @@
 <div class="project-grid">
     {{ range .Pages.ByDate.Reverse }}
     <div class="project-card">
+
+        {{ if .Params.hasDetails }}
         <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        {{ else}}
+        <h3>
+            {{ if .Params.demo }}
+            <a href="{{ .Params.demo }}" target="_blank">{{ .Title }}</a>
+            {{ else if .Params.github }}
+            <a href="{{ .Params.github }}" target="_blank">{{ .Title }}</a>
+            {{ else }}
+            {{ .Title }}
+            {{ end }}
+        </h3>
+        {{ end }}
+
         <div class="post-meta">{{ .Params.tech | default "Various Technologies" }} • {{ .Date.Format "January 2006" }}
         </div>
         {{ with .Params.description }}
@@ -29,7 +43,10 @@
             {{ if .Params.demo }}
             <a href="{{ .Params.demo }}" target="_blank">[ demo ]</a>
             {{ end }}
+
+            {{ if .Params.hasDetails }}
             <a href="{{ .Permalink }}">[ details ]</a>
+            {{ end }}
         </div>
     </div>
     {{ end }}
