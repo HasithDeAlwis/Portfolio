@@ -6,7 +6,7 @@ description: "Walk through an example PR I merged into Grafana Lab's k6 repo and
 ---
 # Building Thread-Safe Event Systems in Go: A k6 waitForResponse Case Study
 
-Browser automation tools need to wait for specific network responses—but building this in a concurrent system is trickier than it looks. When testing web applications, you often need to wait for an API call to complete before proceeding with the next action. Without proper synchronization, tests become flaky and unreliable. Recently, I contributed the `waitForResponse` API to k6's browser module, architecting a thread-safe event system that handles hundreds of concurrent waiters without race conditions or resource leaks.
+Browser automation tools need to wait for specific network responses—but building this in a concurrent system is trickier than it looks. When testing web applications, you often need to wait for an API call to complete before proceeding with the next action. Without proper synchronization, tests become flaky and unreliable. Recently, I [contributed](https://github.com/grafana/k6/pull/5002) the `waitForResponse` API to k6's browser module, architecting a thread-safe event system that handles hundreds of concurrent waiters without race conditions or resource leaks.
 
 ## The Problem: Reflection Hell
 
