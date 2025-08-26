@@ -4,17 +4,15 @@ date: 2025-08-09
 ---
 ## I'm an Engineer, Student, and Hacker
 
-I study Computer Science at the University of Waterloo.
+I study Computer Science at the University of Carleton
+I was a previous intern at [**SurveyMonkey**](https://www.surveymonkey.com/)
 
-I am a Software Engineering Intern at **CentML**
+Some cool things I've done/doing
 
-In the past, I've...
+* Revived cuHacking (with the help of a very talented team) as Head of Software Development to over 1000 applications and 450 attendees
+* Built and managed apps for non-profits at Carleton Blueprint
+* Contributed to [Grafana Labs OSS](https://github.com/grafana/grafana/pulls?q=is%3Apr+is%3Aclosed+author%3AHasithDeAlwis), building new features, fixing bugs, and writing docs
+* Architected a thread-safe browser event handling system for Grafana Labs
+* Played badmiton competitively at a provincial level. 
 
-* Open sourced tools for training state-of-the-art multi-modal models
-* Trained, optimized, and productionized one of the first video diffusion models- reaching **100+ million people** in 2 months @ **WOMBO.ai** as an intern
-* Collaborated with top blockchain experts managing **$600M+ transaction volume** @ **Confluxx**
-* Funded by Tyler Cowen and Thiel Foundation via **Emergent Ventures**
-* Founded rock-climbing products for **over 10k+ athletes** in 15 different countries @ **Send Story**
-* Played Super Smash Bros competitively for over 5 years **[ I main Marth! ]**
-
-I'm interested in high-performance systems, machine learning, programming languages, and creating great organizations.
+I'm interested in high-performance systems, functional programming, and perfect user experiences

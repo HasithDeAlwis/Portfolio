@@ -29,5 +29,12 @@
       <guid>http://localhost:1313/blog/high-performance-systems/</guid>
       <description>&lt;p&gt;Working as a Software Engineering Intern at CentML has given me deep insights into what it takes to build truly high-performance machine learning infrastructure.&lt;/p&gt;&#xA;&lt;h2 id=&#34;performance-first-mindset&#34;&gt;Performance-First Mindset&lt;/h2&gt;&#xA;&lt;p&gt;At CentML, every decision is made with performance in mind. This isn&amp;rsquo;t just about making things fast - it&amp;rsquo;s about understanding the fundamental trade-offs in distributed systems and making conscious choices.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-principles&#34;&gt;Key Principles&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Memory Efficiency&lt;/strong&gt;: Every byte matters when you&amp;rsquo;re working with large models. We spend significant time profiling memory usage and optimizing allocation patterns.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>FE best practices</title>
+      <link>http://localhost:1313/blog/fe-best-practices/</link>
+      <pubDate>Sat, 28 Dec 2024 10:30:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/fe-best-practices/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;DISCLAIMER:&lt;/strong&gt; As predicted, I disagree with a lot of what I wrote here earlier 😅. With that being said, I still want to keep it up since there is still some useful information, and it&amp;rsquo;s always fun to see how far you&amp;rsquo;ve come.&lt;/p&gt;&#xA;&lt;p&gt;Scalable front-end code is an expansive topic; of course, there are topics I can&amp;rsquo;t cover here, such as effective testing, development philosophies, monorepos, and much more. This article focuses on practical strategies for scaling front-end code in terms of architecture, maintainability, and technologies. My primary goal is to leave you with an idea of WHAT you should be researching and looking into, not necessarily explaining the nitty-gritty of all topics. This guide is meant to be framework agnostic, and my advice here should be transferable to any framework.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

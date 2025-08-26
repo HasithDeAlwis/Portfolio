@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FE best practices | &gt; Hasith De Alwis</title>
+    <style>
+        <nav><a href="/" {
+                {
+                if .IsHome
+            }
+        }
+
+        class="active" {
+                {
+                end
+            }
+        }
+
+        >[ home]</a><a href="/blog/" {
+                {
+                if eq .Section "blog"
+            }
+        }
+
+        class="active" {
+                {
+                end
+            }
+        }
+
+        >[ blog]</a><a href="/projects/" {
+                {
+                if eq .Section "projects"
+            }
+        }
+
+        class="active" {
+                {
+                end
+            }
+        }
+
+        >[ projects]</a></nav>* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #2d3748;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background-color: #404040;
+            color: #ffffff;
+            padding: 20px 40px;
+            border-bottom: 3px solid #333;
+        }
+
+        .header-title {
+            font-size: 24px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        .header-title a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .header-title a:hover {
+            color: #87ceeb;
+        }
+
+        .header-subtitle {
+            color: #b0b0b0;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #87ceeb;
+            text-decoration: none;
+            margin-right: 25px;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            font-size: 14px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: #333;
+            border: 1px solid #555;
+            color: #ffffff;
+        }
+
+        main {
+            padding: 40px;
+            min-height: calc(100vh - 200px);
+        }
+
+        .content h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2d3748;
+            font-weight: normal;
+        }
+
+        .content h2 {
+            font-size: 20px;
+            margin: 0 0 15px 0;
+            color: #4a5568;
+            font-weight: normal;
+        }
+
+        .content h3 {
+            font-size: 16px;
+            margin: 25px 0 10px 0;
+            color: #4a5568;
+            font-weight: normal;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .content ul {
+            margin: 15px 0 15px 30px;
+        }
+
+        .content li {
+            margin-bottom: 8px;
+        }
+
+        .content a {
+            color: #3182ce;
+            text-decoration: underline;
+        }
+
+        .content a:hover {
+            color: #2c5282;
+        }
+
+        .post-meta {
+            color: #718096;
+            font-size: 12px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .post-list {
+            margin-top: 30px;
+        }
+
+        .post-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .post-item:last-child {
+            border-bottom: none;
+        }
+
+        .post-title {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+        }
+
+        .post-title a {
+            text-decoration: none;
+            color: #2d3748;
+        }
+
+        .post-title a:hover {
+            color: #3182ce;
+            text-decoration: underline;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .project-card {
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+
+        .project-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            color: #2d3748;
+        }
+
+        .project-card p {
+            margin-bottom: 15px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .project-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: #3182ce;
+            text-decoration: none;
+            font-size: 12px;
+            border: 1px solid #3182ce;
+            padding: 4px 8px;
+        }
+
+        .project-links a:hover {
+            background-color: #3182ce;
+            color: white;
+        }
+
+        .hero-section {
+            margin-bottom: 40px;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .hero-section h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+
+        .hero-section p {
+            font-size: 16px;
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #404040;
+            color: #b0b0b0;
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            border-top: 3px solid #333;
+        }
+
+        .social-links {
+            margin: 15px 0;
+        }
+
+        .social-links a {
+            color: #87ceeb;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 13px;
+        }
+
+        .social-links a:hover {
+            color: #ffffff;
+        }
+
+        .status-line {
+            background-color: #333;
+            color: #87ceeb;
+            padding: 8px 40px;
+            font-size: 12px;
+            border-top: 1px solid #555;
+        }
+
+        code {
+            background-color: #f1f5f9;
+            padding: 2px 6px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 12px;
+            color: #e53e3e;
+        }
+
+        pre {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .blog-banner {
+            background-color: #404040;
+            color: #ffffff;
+            padding: 40px 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .blog-banner-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .blog-banner h1 {
+            font-size: 32px;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+            font-weight: normal;
+        }
+
+        .blog-banner .post-meta {
+            color: #b0b0b0;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .blog-post {
+            margin: 0;
+            padding: 0;
+        }
+
+        .blog-content {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .blog-content article {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-title">
+                <a href="/">&gt; Hasith De Alwis</a>
+            </div>
+            <div class="header-subtitle">
+                <h1>I'm an Engineer, Student, and Hacker</h1>
+            </div>
+            <nav>
+                <a href="/" >[ home ]</a>
+                <a href="/blog/" class="active" >[ blog ]</a>
+                <a href="/projects/" >[ projects ]</a>
+            </nav>
+        </header>
+
+        <main>
+            
+
+
+<div class="blog-post">
+    <div class="blog-banner">
+        <div class="blog-banner-content">
+            <h1>FE best practices</h1>
+            <div class="post-meta">
+                Published on December 28, 2024
+            </div>
+        </div>
+    </div>
+    <div class="blog-content">
+        <article>
+            <div class="content">
+                <p><strong>DISCLAIMER:</strong> As predicted, I disagree with a lot of what I wrote here earlier 😅. With that being said, I still want to keep it up since there is still some useful information, and it&rsquo;s always fun to see how far you&rsquo;ve come.</p>
+<p>Scalable front-end code is an expansive topic; of course, there are topics I can&rsquo;t cover here, such as effective testing, development philosophies, monorepos, and much more. This article focuses on practical strategies for scaling front-end code in terms of architecture, maintainability, and technologies. My primary goal is to leave you with an idea of WHAT you should be researching and looking into, not necessarily explaining the nitty-gritty of all topics. This guide is meant to be framework agnostic, and my advice here should be transferable to any framework.</p>
+<p>It doesn&rsquo;t need to be said, but I&rsquo;ll say it anyway - this is my perspective based on what I know right now. I’m always learning and evolving, so I’m sure I’ll look back on this article in a few months and laugh.</p>
+<h1 id="choosing-the-right-technology">Choosing the Right Technology</h1>
+<p>Technologies are always evolving, so I won&rsquo;t tell you what the best technology is right now. In web development, something considered great today can be outdated and replaced by tomorrow. It&rsquo;s important to know what types of technology to focus your attention on and how to evaluate the technology.</p>
+<h2 id="component-libraries">Component Libraries</h2>
+<p>It&rsquo;s too much overhead to build out your own component library; for most of us, our time is better spent elsewhere. The challenge with building your own component library lies in ensuring your content is accessible. This is no easy task, and accessibility should not be something you mess with; everyone deserves to surf the web with minimal annoyances. When choosing your component library, you must evaluate your project&rsquo;s needs and how much low-level control you need over styling. If you&rsquo;re making a marketing website, you probably need a lot of control over styles, but if you&rsquo;re making a web app, MUI is probably enough.</p>
+<p>As a side note, try to pick out component libraries that don&rsquo;t use CSS-in-JS - it&rsquo;s terrible for performance, so maybe MUI isn&rsquo;t the best choice&hellip; I&rsquo;d also recommend finding a tool that integrates well with Tailwind CSS (like Shadcn).</p>
+<h2 id="frameworks">Frameworks</h2>
+<p>Frameworks should solve the problem that you are facing. Let&rsquo;s take <a href="https://remix.run/">Remix</a> and Shopify. Shopify likely uses Remix on the front-end because of its fine-grained control over data fetching and rendering, whether on the client or server side. Shopify applications are fetching mountains of data, and it has to be optimized to render on the client side for interactivity and on the server side to optimize load times and SEO. Additionally, Remix is loosely coupled to the JSX you write; in fact, I&rsquo;d say almost not at all, and this allows Shopify to easily migrate and switch out Remix for other technologies when the time comes, which is part of their philosophy. The architects at Shopify chose Remix not because it&rsquo;s perfect, but because it solves their specific problem.</p>
+<h2 id="state-management">State Management</h2>
+<p>Before even thinking about the state, break down your app as though it were a CLI. Don&rsquo;t get distracted by buttons or input fields. Focus on the ACTIONS a user can take on your app. Flow chart and diagram how a user traverses and uses your app. State management has existed for decades before any front-end frameworks were created. If you understand the actions a user takes and the consequences of those actions, then the state management solution will be clear. For example, if your state is very reactive, needs validation, or influences cause API calls, maybe you want a harder-hitting state machine rather than Redux?</p>
+<p>The technology you use should follow the principle: &ldquo;low coupling, high cohesion.&rdquo; Think about software as just boxes inside of boxes - these boxes should exist on their own and should never rely on another box to function. However, when these boxes work together, they can form software to achieve a higher goal. If the technology you choose forces you to be coupled to it (cough, cough Next.js), maybe it isn&rsquo;t the right fit&hellip;</p>
+<p><figure><img src="/low-coupling-high-cohension.png"
+    alt="low coupling high cohesion" width="100%">
+</figure>
+
+<!-- raw HTML omitted --><!-- raw HTML omitted -->Image credit: <a href="https://feature-sliced.design/docs/reference/slices-segments">Feature-Sliced Design</a><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="folder-structure">Folder Structure</h1>
+<p>This is where your application basically becomes Angular or Ember.js, no matter what framework you use, both of which propose a similar organizational methodology with differing languages.</p>
+<h2 id="feature-sliced-design">Feature-Sliced Design</h2>
+<p><a href="https://feature-sliced.design/">Feature-sliced</a> design is a methodology for structuring front-end projects by breaking them into three well-defined layers, focusing on scalability and maintainability. The first layer&rsquo;s key components are the following: The app, which includes application-level logic like routing, entry points, and global configurations. Features, which are self-contained modules representing distinct user actions or app capabilities (e.g., login, search). Entities, which are business entities or domain objects (e.g., User, Product) with associated logic and data. Shared, which includes reusable utilities, libraries, or constants that can be used across the entire app. UI/Components, which are basic, reusable presentational components without application-specific logic. The methodology emphasizes grouping code by feature rather than type, making it clear which code belongs where and ensuring that shared resources are truly shared across the app. The second layer is slices, which are key parts of a feature. The final layer is segments. When I create my segments, I take inspiration from <a href="https://github.com/alan2207/bulletproof-react">Bulletproof React</a>. Bullet-proof React suggests breaking down feature slices into utils, API, UI, config, etc.</p>
+<p>Remember when I mentioned that good software thrives on low coupling and high cohesion? Feature-sliced design embodies this principle. Each feature is self-contained, functioning independently while relying only on the &ldquo;shared&rdquo; directory. At the same time, these features come together cohesively to form your application. If you&rsquo;ve ever navigated a messy, unorganized codebase, you understand the frustration of tracking down a component. By organizing code by features, you make everything more intuitive and accessible.</p>
+<h1 id="design-patterns">Design Patterns</h1>
+<p>I&rsquo;d recommend reading engineering blogs from companies, such as Google, Datadog, and Patterns.Dev, and my favourite, Figma, to learn design patterns and study how battle-tested open source tools propose structuring code. I&rsquo;ll focus on three design patterns that I&rsquo;ve implemented, which have tremendously improved my code quality.</p>
+<h2 id="presenter-container">Presenter, Container</h2>
+<p>Separating components into presenters and containers enhances maintainability, reusability, testability, and scalability. Presenter components focus on how the UI is rendered, handling only visual aspects, while container components manage what is rendered by handling logic, state, and data fetching. This separation ensures each component has a single responsibility, making the code easier to understand and modify. Presenter components become reusable across contexts since they are not tied to specific logic, while container components focus solely on data handling. Testing is streamlined, as visual and logical concerns can be addressed independently. This structure aligns with the single-responsibility principle, enabling smoother scaling as the application grows.</p>
+<p><figure><img src="/container-presenter.png"
+    alt="Container Presenter Pattern" width="100%">
+</figure>
+
+<!-- raw HTML omitted --><!-- raw HTML omitted -->Image credit: <a href="https://medium.com/generic-ui/the-new-approach-to-the-container-presenter-pattern-in-angular-dac60ca1b65e">Luke from Medium.com</a><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="file-naming-conventions">File Naming Conventions</h2>
+<p>Personally, I follow <a href="https://angular.dev/style-guide">Angular&rsquo;s naming conventions</a>, which are phenomenal and have boosted my dev-ex substantially. The Angular documentation proposes adding a suffix to your file name that describes its purpose. For example, if it&rsquo;s a component, add a <code>.component</code>, if it&rsquo;s a utility, add a <code>.util</code>, if it&rsquo;s a model, add a <code>.model</code> and so on! This simple convention reduces decision fatigue and ensures consistency across your project. Furthermore, finding files in your IDE is much easier - search using the suffix. Additionally, code reviews take much less time since the reviewer can interpret the purpose of a file without opening it. By using descriptive suffixes like <code>.component</code>, <code>.service</code>, or <code>.util</code>, the developer is prompted to think about the file&rsquo;s purpose and avoid mixing unrelated logic.</p>
+<h2 id="leverage-custom-hooks">Leverage Custom Hooks</h2>
+<p>Custom hooks make your code more modular, reusable, and readable—when implemented correctly (refer to the React hook rules for best practices). Hooks allow you to abstract away how something is done, enabling you to focus on what is being accomplished, similar to a reducer. They&rsquo;re especially valuable for managing features that trigger multiple side effects. Take a filter feature, for instance: each time the user interacts with it, your program might either make an API call or sort data client-side, depending on the architecture. Instead of embedding this logic in your component, you can abstract it into a custom hook, providing a clean and reusable interface for your components. However, avoid making hooks overly specific, as this increases coupling and complicates future migrations or refactors.</p>
+<h1 id="design-systems">Design Systems</h1>
+<p>Learn. Figma.</p>
+<p>In my opinion, all front-end devs should also be knowledgeable about UI/UX and be able to build out or extend a design system. UI/UX engineers offer a very valuable perspective on UX best practices, but a front-end dev can offer a technical point of view. However, if you, as a front-end dev, know the basics of UI/UX, then you can effectively work with designers to create an optimal solution. I&rsquo;d recommend looking at <a href="https://www.figma.com/design/wc1JOWR48tBNkjcjwY3AzB/%E2%8C%A8%EF%B8%8F-cuHacking-Design-System?node-id=605-271&amp;t=PWNXDGvjiyuKR3X9-0">cuHacking</a> for how we implemented our design system. While not all design systems need to follow this exact approach, we adapted the Radix design system philosophy to better meet the unique needs of our platform. If you want to learn the basics of Design systems, Figma has an article on exactly that, which I would recommend reading to get a foundational idea of how to build a design system.</p>
+<p>A standardized design system reduces decision fatigue, and with the effective use of Figma and Token Studio for Figma, you can create a 1-1 relationship with Figma and code.</p>
+<p>Design systems are similar to SQL databases. SQL databases are notoriously rigid, but they allow devs to operate at high velocity. Similarly, following a design system leads developers and designers to move with incredible velocity. Just like an SQL database, as your design system evolves, you can extend and refine it to fit your needs better.</p>
+<h1 id="final-remarks">Final Remarks</h1>
+<p>As the web development system constantly evolves so will our perceptions on what makes front-end code truly scalable. At the end of the day, this article is just theory and nothing more. Everyone reading this should always try and experiment with different ideologies, frameworks, and methods to come up with their own set of best practices.</p>
+
+            </div>
+        </article>
+    </div>
+</div>
+
+
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="#">[ Github ]</a>
+                <a href="#">[ Twitter ]</a>
+                <a href="#">[ Email ]</a>
+                <a href="#">[ LinkedIn ]</a>
+            </div>
+            <div class="status-line">
+                &copy; 2025 &gt; Hasith De Alwis -- Built with Hugo and Emacs vibes
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

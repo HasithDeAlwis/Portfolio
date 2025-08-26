@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on &gt; Hasith De Alwis</title>
+    <title>&gt; Hasith De Alwis</title>
     <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on &gt; Hasith De Alwis</description>
+    <description>Recent content on &gt; Hasith De Alwis</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 09 Aug 2025 18:42:37 -0400</lastBuildDate>
@@ -14,6 +14,20 @@
       <pubDate>Sat, 09 Aug 2025 18:42:37 -0400</pubDate>
       <guid>http://localhost:1313/posts/first-post/</guid>
       <description>&lt;p&gt;Welcome to my first blog post! I decided to build my portfolio site using Hugo and document the process.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-hugo&#34;&gt;Why Hugo?&lt;/h2&gt;&#xA;&lt;p&gt;After exploring various static site generators, I chose Hugo for several reasons:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Speed&lt;/strong&gt; - Hugo builds sites incredibly fast&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Flexibility&lt;/strong&gt; - Complete control over layouts and styling&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Markdown&lt;/strong&gt; - Write content in markdown with frontmatter&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;No dependencies&lt;/strong&gt; - Single binary, no complex toolchain&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;the-emacs-gnu-aesthetic&#34;&gt;The Emacs GNU Aesthetic&lt;/h2&gt;&#xA;&lt;p&gt;I wanted my site to have that classic Emacs/GNU terminal vibe - clean, functional, and reminiscent of the tools I use daily for coding. The dark header, monospace fonts, and terminal-inspired color scheme create that perfect developer aesthetic.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/high-performance-systems/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/high-performance-systems/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/scaling-video-diffusion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/scaling-video-diffusion/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

@@ -44,6 +44,13 @@
       <description>&lt;p&gt;Built and optimized one of the first commercially successful video diffusion models, reaching over 100 million users in just 2 months.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-achievements&#34;&gt;Key Achievements&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Implemented state-of-the-art video generation algorithms&lt;/li&gt;&#xA;&lt;li&gt;Optimized inference pipeline for real-time generation&lt;/li&gt;&#xA;&lt;li&gt;Scaled infrastructure to handle millions of daily requests&lt;/li&gt;&#xA;&lt;li&gt;Collaborated with research team on novel architectural improvements&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; PyTorch, CUDA, Docker, Kubernetes, Python&lt;/p&gt;</description>
     </item>
     <item>
+      <title>FE best practices</title>
+      <link>http://localhost:1313/blog/fe-best-practices/</link>
+      <pubDate>Sat, 28 Dec 2024 10:30:00 -0400</pubDate>
+      <guid>http://localhost:1313/blog/fe-best-practices/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;DISCLAIMER:&lt;/strong&gt; As predicted, I disagree with a lot of what I wrote here earlier 😅. With that being said, I still want to keep it up since there is still some useful information, and it&amp;rsquo;s always fun to see how far you&amp;rsquo;ve come.&lt;/p&gt;&#xA;&lt;p&gt;Scalable front-end code is an expansive topic; of course, there are topics I can&amp;rsquo;t cover here, such as effective testing, development philosophies, monorepos, and much more. This article focuses on practical strategies for scaling front-end code in terms of architecture, maintainability, and technologies. My primary goal is to leave you with an idea of WHAT you should be researching and looking into, not necessarily explaining the nitty-gritty of all topics. This guide is meant to be framework agnostic, and my advice here should be transferable to any framework.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Blockchain Transaction System</title>
       <link>http://localhost:1313/projects/blockchain-system/</link>
       <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
@@ -63,6 +70,20 @@
       <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/send-story/</guid>
       <description>&lt;p&gt;Founded and built an e-commerce platform for rock climbing products, serving over 10,000 athletes across 15 countries.&lt;/p&gt;&#xA;&lt;h2 id=&#34;business-impact&#34;&gt;Business Impact&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;International shipping and logistics&lt;/li&gt;&#xA;&lt;li&gt;Custom product design and manufacturing&lt;/li&gt;&#xA;&lt;li&gt;Community building and athlete sponsorships&lt;/li&gt;&#xA;&lt;li&gt;Sustainable growth and profitability&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; React, Node.js, Stripe, Shopify, AWS&lt;/p&gt;&#xA;&lt;h2 id=&#34;business-impact-1&#34;&gt;Business Impact&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;International shipping and logistics&lt;/li&gt;&#xA;&lt;li&gt;Custom product design and manufacturing&lt;/li&gt;&#xA;&lt;li&gt;Community building and athlete sponsorships&lt;/li&gt;&#xA;&lt;li&gt;Sustainable growth and profitability&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; React, Node.js, Stripe, Shopify, AWS&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/high-performance-systems/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/high-performance-systems/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/scaling-video-diffusion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/scaling-video-diffusion/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>
